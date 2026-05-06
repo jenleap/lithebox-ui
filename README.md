@@ -1,15 +1,9 @@
 
 # Lithebox UI
 
-**Lithebox** is a **token-driven, design-system-first UI component framework**.  
-Unlike traditional UI libraries, Lithebox does **not** ship with prebuilt styles or themes. Instead, users provide their own **tokens**, which are compiled into **CSS variables** and used throughout the component library via a **recipe system**.
+**Lithebox UI** is a token-driven, design-system-first React component library.
 
-This makes Lithebox:
-
-- Fully **design-system agnostic**
-- Flexible and **themeable**
-- Scalable across components
-- Framework-agnostic at its core (React is the first implementation)
+All visual decisions originate from a single token structure. Components consume those tokens as CSS variables — no hardcoded styles, no external themes required.
 
 ---
 
@@ -18,49 +12,40 @@ This makes Lithebox:
 - [Architecture](#architecture)
 - [Getting Started](#getting-started)
 - [Tokens](#tokens)
-- [Component Recipes](#component-recipes)
-- [React Components](#react-components)
-- [Future Features](#future-features)
-- [Contributing](#contributing)
-- [License](#license)
+- [Layout Primitives](#layout-primitives)
+- [Components](#components)
+- [Theming](#theming)
+- [Storybook](#storybook)
 
 ---
 
 ## Architecture
 
-Lithebox has **four core layers**:
+```
+Tokens (defaultTokens + overrides)
+        │
+        ▼
+  mergeTokens()
+        │
+        ▼
+tokensToCSSVariables()
+        │
+        ▼
+  ThemeProvider (injects CSS vars into DOM)
+        │
+   ┌────┴──────────────┐
+   │                   │
+Layout Primitives   Components
+(Box, Stack, Row,   (Button, Card, Text,
+ Container)          Heading, ...)
+```
 
-### 1. Token Layer (`@lithebox-ui/core`)
-- Validates user-provided **raw tokens** (colors, spacing, radius, font sizes)
-- Validates **semantic tokens** (design roles like `primary`, `surface`, `danger`)
-- Resolves references from semantic tokens to raw tokens
-- Compiles tokens into **CSS variables** (e.g., `--lb-color-primary`)
+**Four layers:**
 
-### 2. Recipe System
-- Pure functions that define **all component styling logic**
-- Include:
-  - Slots (root, label, icon, etc.)
-  - Base styles
-  - Variants (size, type, etc.)
-  - Default variants
-  - Compound variants (future)
-  - State styles (hover, focus, disabled)
-- Recipes are **framework-agnostic** and reusable
-
-### 3. React Layer (`lithebox-ui`)
-- `DesignSystemProvider`:
-  - Injects CSS variables into the DOM
-  - Provides token context for components
-- React components:
-  - Thin wrappers
-  - Render JSX
-  - Consume styles from recipes
-  - Forward props for composability
-
-### 4. Components
-- Built from recipes and token variables
-- Stateless and flexible
-- Fully themeable via token changes
+1. **Token types** — A single `Tokens` interface defines all design values: color, spacing, radius, typography, and shadow.
+2. **Token pipeline** — `mergeTokens` deep-merges user overrides with `defaultTokens`. `tokensToCSSVariables` compiles the resolved tokens into CSS custom properties.
+3. **ThemeProvider** — Injects the compiled CSS variables into the DOM via inline styles and exposes the resolved token object via `useTheme`.
+4. **Components & Primitives** — Consume CSS variables directly. No runtime token lookups.
 
 ---
 
@@ -69,90 +54,186 @@ Lithebox has **four core layers**:
 ### Install
 
 ```bash
-pnpm add lithebox-ui
-```
-or
-```bash
 npm install lithebox-ui
 ```
 
-### Example Usage
+### Basic usage
 
-```bash
-import React from "react"
-import { DesignSystemProvider, Button } from "lithebox-ui"
-
-const rawTokens = {
-  color: { blue500: "#2563eb", white: "#ffffff" },
-  spacing: { sm: "8px", md: "12px" },
-  radius: { md: "8px" },
-  fontSize: {},
-  fontWeight: {},
-  lineHeight: {}
-}
-
-const semanticTokens = {
-  color: { primary: "{color.blue500}", onPrimary: "{color.white}" },
-  spacing: { sm: "{spacing.sm}", md: "{spacing.md}" },
-  radius: { default: "{radius.md}" },
-  typography: {}
-}
+```tsx
+import { ThemeProvider, Button, Stack } from "lithebox-ui"
 
 export default function App() {
   return (
-    <DesignSystemProvider
-      rawTokens={rawTokens}
-      semanticTokens={semanticTokens}
-    >
-      <div style={{ display: "flex", gap: "16px" }}>
-        <Button>Default</Button>
-        <Button variant="outlined">Outlined</Button>
-        <Button size="sm">Small</Button>
-      </div>
-    </DesignSystemProvider>
+    <ThemeProvider>
+      <Stack gap="md">
+        <Button>Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="ghost">Ghost</Button>
+      </Stack>
+    </ThemeProvider>
   )
 }
 ```
 
+`ThemeProvider` with no props uses the built-in `defaultTokens`.
+
+---
+
 ## Tokens
 
-#### Raw Tokens
+The `Tokens` type is the single source of truth for all design values:
 
-Primitive design values:
-```bash
-{
-  "color": { "blue500": "#2563eb" },
-  "spacing": { "sm": "8px" },
-  "radius": { "md": "8px" }
+```ts
+type Tokens = {
+  color: {
+    primary: string
+    secondary: string
+    background: string
+    surface: string
+    text: { primary: string; secondary: string }
+    border: string
+    error: string
+  }
+  radius: { sm: string; md: string; lg: string }
+  spacing: { xs: string; sm: string; md: string; lg: string; xl: string }
+  typography: {
+    fontFamily: string
+    size: { sm: string; md: string; lg: string; xl: string }
+    weight: { regular: number; medium: number; bold: number }
+  }
+  shadow: { sm: string; md: string }
 }
 ```
 
-#### Semantic Tokens
+### Default tokens
 
-Map meaning to raw tokens:
-```bash
-{
-  "color": { "primary": "{color.blue500}", "onPrimary": "{color.white}" },
-  "spacing": { "buttonPadding": "{spacing.sm}" }
-}
+`defaultTokens` ships with sensible defaults (Indigo primary, neutral grays, Inter font family) and can be used as-is or partially overridden.
+
+### Token pipeline
+
+```ts
+import { mergeTokens, tokensToCSSVariables, defaultTokens } from "lithebox-ui"
+
+const resolved = mergeTokens(defaultTokens, { color: { primary: "#0EA5E9" } })
+const cssVars = tokensToCSSVariables(resolved)
+// { "--color-primary": "#0EA5E9", "--spacing-md": "16px", ... }
 ```
 
-## Component Recipes
+---
 
-Recipes define styling logic for all components:
-```bash
-const buttonRecipe = createRecipe({
-  slots: ["root"],
-  base: { root: { borderRadius: "var(--lb-radius-default)" } },
-  variants: {
-    variant: {
-      contained: { root: { background: "var(--lb-color-primary)", color: "var(--lb-color-onPrimary)" } }
-    }
+## Layout Primitives
+
+Primitives are unstyled building blocks for page structure. They consume spacing and layout tokens.
+
+| Component | Purpose |
+|---|---|
+| `Box` | Base block element with token-mapped spacing and display props |
+| `Stack` | Vertical flex container with a `gap` prop |
+| `Row` | Horizontal flex container with `gap` and alignment props |
+| `Container` | Max-width wrapper with centered horizontal padding |
+
+```tsx
+import { Stack, Row, Box, Container } from "lithebox-ui"
+
+<Container>
+  <Stack gap="lg">
+    <Row gap="md" align="center">
+      <Box padding="sm">Item A</Box>
+      <Box padding="sm">Item B</Box>
+    </Row>
+  </Stack>
+</Container>
+```
+
+---
+
+## Components
+
+All components are styled via CSS variables injected by `ThemeProvider`.
+
+| Component | Variants / Props |
+|---|---|
+| `Button` | `variant`: `primary` \| `secondary` \| `ghost`; `size`: `sm` \| `md` \| `lg` |
+| `Card` | Surface-colored container with shadow and radius |
+| `Surface` | Semantic background block |
+| `Divider` | Horizontal rule using the border token |
+| `Text` | Body copy with `size` and `color` props |
+| `Heading` | Headings `h1`–`h6` via `level` prop |
+| `Label` | Form label with secondary text styling |
+| `Icon` | Inline SVG wrapper with token-mapped size and color |
+
+```tsx
+import { Card, Heading, Text, Button, Stack } from "lithebox-ui"
+
+<Card>
+  <Stack gap="sm">
+    <Heading level={2}>Card title</Heading>
+    <Text size="md">Supporting description text.</Text>
+    <Button size="sm">Action</Button>
+  </Stack>
+</Card>
+```
+
+---
+
+## Theming
+
+Pass a partial `Tokens` object to `ThemeProvider` to override any defaults:
+
+```tsx
+import { ThemeProvider } from "lithebox-ui"
+
+const tokens = {
+  color: {
+    primary: "#0EA5E9",
+    secondary: "#F59E0B"
   },
-  defaultVariants: { variant: "contained" }
-})
+  typography: {
+    fontFamily: "Geist, sans-serif"
+  }
+}
+
+export default function App() {
+  return (
+    <ThemeProvider tokens={tokens}>
+      {/* all components below use the overridden tokens */}
+    </ThemeProvider>
+  )
+}
 ```
 
-License
+Only the values you provide are overridden — everything else falls back to `defaultTokens`.
+
+To access resolved tokens inside a component:
+
+```tsx
+import { useTheme } from "lithebox-ui"
+
+function MyComponent() {
+  const tokens = useTheme()
+  return <div style={{ color: tokens.color.primary }}>...</div>
+}
+```
+
+---
+
+## Storybook
+
+The component library ships with Storybook for interactive development and documentation.
+
+```bash
+npm run storybook
+```
+
+Stories cover:
+- Token visualization (color, spacing, typography, radius, shadow)
+- Every layout primitive
+- Every component with all variants
+- Composition examples (forms, cards, navigation patterns)
+- Live token override controls via Storybook addon
+
+---
+
+## License
 
 MIT © Lithebox
