@@ -1,0 +1,57 @@
+import { describe, it, expect, vi } from "vitest"
+import { render, fireEvent } from "@testing-library/react"
+import React from "react"
+import { Button } from "./Button"
+
+describe("Button", () => {
+  it("renders a button element", () => {
+    const { container } = render(<Button>Click</Button>)
+    expect(container.firstChild?.nodeName).toBe("BUTTON")
+  })
+
+  it("primary variant applies primary background", () => {
+    const { container } = render(<Button variant="primary">Click</Button>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).toContain("var(--color-primary)")
+  })
+
+  it("secondary variant applies surface background and border", () => {
+    const { container } = render(<Button variant="secondary">Click</Button>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).toContain("var(--color-surface)")
+    expect(el.getAttribute("style")).toContain("var(--color-border)")
+  })
+
+  it("ghost variant applies transparent background", () => {
+    const { container } = render(<Button variant="ghost">Click</Button>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).toContain("transparent")
+  })
+
+  it("sm size applies xs/sm spacing tokens for padding", () => {
+    const { container } = render(<Button size="sm">Click</Button>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).toContain("var(--spacing-xs)")
+    expect(el.getAttribute("style")).toContain("var(--spacing-sm)")
+  })
+
+  it("lg size applies md/lg spacing tokens for padding", () => {
+    const { container } = render(<Button size="lg">Click</Button>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).toContain("var(--spacing-md)")
+    expect(el.getAttribute("style")).toContain("var(--spacing-lg)")
+  })
+
+  it("always applies md border radius", () => {
+    const { container } = render(<Button>Click</Button>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).toContain("var(--radius-md)")
+  })
+
+  it("fires onClick when clicked", () => {
+    const handler = vi.fn()
+    const { container } = render(<Button onClick={handler}>Click</Button>)
+    fireEvent.click(container.firstChild as HTMLElement)
+    expect(handler).toHaveBeenCalledOnce()
+  })
+})

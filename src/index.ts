@@ -15,3 +15,27 @@ export type { RowProps } from "./primitives/Row"
 
 export { Container } from "./primitives/Container"
 export type { ContainerProps } from "./primitives/Container"
+
+export { Text } from "./components/Text"
+export type { TextProps } from "./components/Text"
+
+export { Heading } from "./components/Heading"
+export type { HeadingProps } from "./components/Heading"
+
+export { Label } from "./components/Label"
+export type { LabelProps } from "./components/Label"
+
+export { Card } from "./components/Card"
+export type { CardProps } from "./components/Card"
+
+export { Surface } from "./components/Surface"
+export type { SurfaceProps } from "./components/Surface"
+
+export { Divider } from "./components/Divider"
+export type { DividerProps } from "./components/Divider"
+
+export { Button } from "./components/Button"
+export type { ButtonProps } from "./components/Button"
+
+export { Icon } from "./components/Icon"
+export type { IconProps } from "./components/Icon"
