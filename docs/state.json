@@ -1,17 +1,14 @@
 {
-    "current_feature": "F003-core-primitives",
-    "current_task_id": "",
-    "status": "completed",
+    "current_feature": "F004-storybook-integration",
+    "current_task_id": "001-storybook-setup",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-text-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-heading-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-label-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-card-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-surface-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-divider-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-button-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-icon-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "009-public-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "010-unit-tests", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-storybook-setup", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-theme-decorator", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-token-stories", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-layout-primitive-stories", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-component-stories", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-composition-stories", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-token-override-controls", "status": "pending", "attempts": 0, "errors": null }
     ]
 }

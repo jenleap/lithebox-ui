@@ -46,3 +46,4 @@
 {"timestamp":"2026-05-06T00:45:00Z","event":"task_completed","feature_id":"F003-core-primitives","task_id":"009-public-api","notes":""}
 {"timestamp":"2026-05-06T00:46:00Z","event":"task_started","feature_id":"F003-core-primitives","task_id":"010-unit-tests","notes":""}
 {"timestamp":"2026-05-06T00:47:00Z","event":"task_completed","feature_id":"F003-core-primitives","task_id":"010-unit-tests","notes":""}
+{"timestamp":"2026-05-06T00:48:00Z","event":"task_started","feature_id":"F004-storybook-integration","task_id":"001-storybook-setup","notes":""}
