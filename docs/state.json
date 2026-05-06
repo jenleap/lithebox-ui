@@ -1,13 +1,13 @@
 {
     "current_feature": "F002-layout-primitives",
-    "current_task_id": "001-box-component",
-    "status": "in_progress",
+    "current_task_id": "",
+    "status": "completed",
     "tasks": [
-        { "id": "001-box-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-stack-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-row-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-container-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-public-api", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-unit-tests", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-box-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-stack-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-row-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-container-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-public-api", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-unit-tests", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
