@@ -1,15 +1,13 @@
 {
-    "current_feature": "F001-theme-token-system",
-    "current_task_id": "",
-    "status": "completed",
+    "current_feature": "F002-layout-primitives",
+    "current_task_id": "001-box-component",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-scaffold-project", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-token-types", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-default-tokens", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-merge-tokens", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-css-variables", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-theme-provider", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-public-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-unit-tests", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-box-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-stack-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-row-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-container-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-public-api", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-unit-tests", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
