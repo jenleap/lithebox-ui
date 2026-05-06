@@ -47,3 +47,16 @@
 {"timestamp":"2026-05-06T00:46:00Z","event":"task_started","feature_id":"F003-core-primitives","task_id":"010-unit-tests","notes":""}
 {"timestamp":"2026-05-06T00:47:00Z","event":"task_completed","feature_id":"F003-core-primitives","task_id":"010-unit-tests","notes":""}
 {"timestamp":"2026-05-06T00:48:00Z","event":"task_started","feature_id":"F004-storybook-integration","task_id":"001-storybook-setup","notes":""}
+{"timestamp":"2026-05-06T00:49:00Z","event":"task_completed","feature_id":"F004-storybook-integration","task_id":"001-storybook-setup","notes":""}
+{"timestamp":"2026-05-06T00:50:00Z","event":"task_started","feature_id":"F004-storybook-integration","task_id":"002-theme-decorator","notes":""}
+{"timestamp":"2026-05-06T00:51:00Z","event":"task_completed","feature_id":"F004-storybook-integration","task_id":"002-theme-decorator","notes":""}
+{"timestamp":"2026-05-06T00:52:00Z","event":"task_started","feature_id":"F004-storybook-integration","task_id":"003-token-stories","notes":""}
+{"timestamp":"2026-05-06T00:53:00Z","event":"task_completed","feature_id":"F004-storybook-integration","task_id":"003-token-stories","notes":""}
+{"timestamp":"2026-05-06T00:54:00Z","event":"task_started","feature_id":"F004-storybook-integration","task_id":"004-layout-primitive-stories","notes":""}
+{"timestamp":"2026-05-06T00:55:00Z","event":"task_completed","feature_id":"F004-storybook-integration","task_id":"004-layout-primitive-stories","notes":""}
+{"timestamp":"2026-05-06T00:56:00Z","event":"task_started","feature_id":"F004-storybook-integration","task_id":"005-component-stories","notes":""}
+{"timestamp":"2026-05-06T00:57:00Z","event":"task_completed","feature_id":"F004-storybook-integration","task_id":"005-component-stories","notes":""}
+{"timestamp":"2026-05-06T00:58:00Z","event":"task_started","feature_id":"F004-storybook-integration","task_id":"006-composition-stories","notes":""}
+{"timestamp":"2026-05-06T00:59:00Z","event":"task_completed","feature_id":"F004-storybook-integration","task_id":"006-composition-stories","notes":""}
+{"timestamp":"2026-05-06T01:00:00Z","event":"task_started","feature_id":"F004-storybook-integration","task_id":"007-token-override-controls","notes":""}
+{"timestamp":"2026-05-06T01:01:00Z","event":"task_completed","feature_id":"F004-storybook-integration","task_id":"007-token-override-controls","notes":""}

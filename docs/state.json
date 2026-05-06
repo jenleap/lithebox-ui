@@ -1,14 +1,14 @@
 {
     "current_feature": "F004-storybook-integration",
-    "current_task_id": "001-storybook-setup",
-    "status": "in_progress",
+    "current_task_id": "",
+    "status": "completed",
     "tasks": [
-        { "id": "001-storybook-setup", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-theme-decorator", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-token-stories", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-layout-primitive-stories", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-component-stories", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-composition-stories", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-token-override-controls", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-storybook-setup", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-theme-decorator", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-token-stories", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-layout-primitive-stories", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-component-stories", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-composition-stories", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-token-override-controls", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
