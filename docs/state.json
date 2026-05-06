@@ -1,13 +1,17 @@
 {
-    "current_feature": "F002-layout-primitives",
-    "current_task_id": "",
-    "status": "completed",
+    "current_feature": "F003-core-primitives",
+    "current_task_id": "001-text-component",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-box-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-stack-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-row-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-container-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-public-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-unit-tests", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-text-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-heading-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-label-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-card-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-surface-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-divider-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-button-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-icon-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-public-api", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "010-unit-tests", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
