@@ -1,17 +1,34 @@
 import { ButtonContract } from "../contracts/ButtonContract"
+import { ButtonInteractionContract } from "../contracts/ButtonInteractionContract"
 import { resolveSlot } from "../contracts/resolveContract"
 import { validateVariant } from "../contracts/validateContract"
+import { useInteractionState } from "../interactions"
 
 export type ButtonProps = {
   variant?: "primary" | "secondary" | "ghost"
   size?: "sm" | "md" | "lg"
+  disabled?: boolean
+  loading?: boolean
   children: React.ReactNode
   onClick?: () => void
 }
 
-export function Button({ variant = "primary", size = "md", children, onClick }: ButtonProps) {
+export function Button({
+  variant = "primary",
+  size = "md",
+  disabled = false,
+  loading = false,
+  children,
+  onClick,
+}: ButtonProps) {
   validateVariant(ButtonContract.variant, "variant", variant, "Button")
   validateVariant(ButtonContract.size, "size", size, "Button")
+
+  const { interactionProps, stateStyles } = useInteractionState({
+    disabled,
+    loading,
+    contract: ButtonInteractionContract,
+  })
 
   const v = ButtonContract.variant[variant]
   const s = ButtonContract.size[size]
@@ -21,7 +38,7 @@ export function Button({ variant = "primary", size = "md", children, onClick }: 
     ? "none"
     : `1px solid ${borderColor}`
 
-  const style: React.CSSProperties = {
+  const baseStyle: React.CSSProperties = {
     background: resolveSlot(v.background),
     color: resolveSlot(v.color),
     border,
@@ -36,8 +53,15 @@ export function Button({ variant = "primary", size = "md", children, onClick }: 
     justifyContent: "center",
   }
 
+  const style: React.CSSProperties = { ...baseStyle, ...stateStyles }
+
+  function handleClick() {
+    if (disabled || loading) return
+    onClick?.()
+  }
+
   return (
-    <button style={style} onClick={onClick}>
+    <button style={style} onClick={handleClick} disabled={disabled} {...interactionProps}>
       {children}
     </button>
   )

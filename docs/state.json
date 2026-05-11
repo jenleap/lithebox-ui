@@ -1,13 +1,13 @@
 {
     "current_feature": "F006-interaction-model",
-    "current_task_id": "001-interaction-state-types",
-    "status": "in_progress",
+    "current_task_id": "",
+    "status": "completed",
     "tasks": [
-        { "id": "001-interaction-state-types", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-state-token-mapping", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-use-interaction-state-hook", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-button-interaction-contract", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-card-interaction-contract", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-storybook-interaction-stories", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-interaction-state-types", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-state-token-mapping", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-use-interaction-state-hook", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-button-interaction-contract", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-card-interaction-contract", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-storybook-interaction-stories", "status": "completed", "attempts": 1, "errors": null }
     ]
 }

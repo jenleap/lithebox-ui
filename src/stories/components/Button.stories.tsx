@@ -38,6 +38,24 @@ export const Sizes: Story = {
   ),
 };
 
+export const Disabled: Story = {
+  render: () => <Button disabled>Disabled</Button>,
+};
+
+export const Loading: Story = {
+  render: () => <Button loading>Saving...</Button>,
+};
+
+export const AllVariantsDisabled: Story = {
+  render: () => (
+    <Row gap="md" align="center">
+      <Button variant="primary" disabled>Primary</Button>
+      <Button variant="secondary" disabled>Secondary</Button>
+      <Button variant="ghost" disabled>Ghost</Button>
+    </Row>
+  ),
+};
+
 export const AllCombinations: Story = {
   render: () => (
     <Stack gap="md">

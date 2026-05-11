@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest"
-import { render } from "@testing-library/react"
+import { describe, it, expect, vi } from "vitest"
+import { render, fireEvent } from "@testing-library/react"
 import React from "react"
 import { Card } from "./Card"
 
@@ -37,5 +37,24 @@ describe("Card", () => {
     const { container } = render(<Card>content</Card>)
     const el = container.firstChild as HTMLElement
     expect(el.getAttribute("style")).not.toContain("padding")
+  })
+
+  it("non-interactive Card renders without pointer cursor", () => {
+    const { container } = render(<Card>content</Card>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).not.toContain("pointer")
+  })
+
+  it("interactive Card has pointer cursor", () => {
+    const { container } = render(<Card interactive>content</Card>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).toContain("pointer")
+  })
+
+  it("onClick fires when Card is interactive and clicked", () => {
+    const handler = vi.fn()
+    const { container } = render(<Card onClick={handler}>content</Card>)
+    fireEvent.click(container.firstChild as HTMLElement)
+    expect(handler).toHaveBeenCalledOnce()
   })
 })

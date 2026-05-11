@@ -54,4 +54,28 @@ describe("Button", () => {
     fireEvent.click(container.firstChild as HTMLElement)
     expect(handler).toHaveBeenCalledOnce()
   })
+
+  it("disabled button does not call onClick", () => {
+    const handler = vi.fn()
+    const { container } = render(<Button disabled onClick={handler}>Click</Button>)
+    fireEvent.click(container.firstChild as HTMLElement)
+    expect(handler).not.toHaveBeenCalled()
+  })
+
+  it("disabled button has disabled attribute", () => {
+    const { container } = render(<Button disabled>Click</Button>)
+    const el = container.firstChild as HTMLButtonElement
+    expect(el.disabled).toBe(true)
+  })
+
+  it("loading button renders children unchanged", () => {
+    const { getByText } = render(<Button loading>Saving...</Button>)
+    expect(getByText("Saving...")).toBeTruthy()
+  })
+
+  it("disabled button has opacity 0.5 in style", () => {
+    const { container } = render(<Button disabled>Click</Button>)
+    const el = container.firstChild as HTMLElement
+    expect(el.getAttribute("style")).toContain("opacity: 0.5")
+  })
 })
