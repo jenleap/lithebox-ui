@@ -1,13 +1,18 @@
 {
-    "current_feature": "F006-interaction-model",
-    "current_task_id": "",
-    "status": "completed",
+    "current_feature": "F007-form-system",
+    "current_task_id": "001-error-interaction-state",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-interaction-state-types", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-state-token-mapping", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-use-interaction-state-hook", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-button-interaction-contract", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-card-interaction-contract", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-storybook-interaction-stories", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-error-interaction-state", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-input-token-contract", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-input-interaction-contract", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-input-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-textarea-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-select-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-checkbox-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-radio-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-field-helper-components", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "010-field-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "011-storybook-form-stories", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
