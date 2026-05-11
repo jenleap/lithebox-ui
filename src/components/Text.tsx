@@ -1,19 +1,25 @@
-import type { Tokens } from "../tokens/types"
+import { TextContract } from "../contracts/TextContract"
+import { resolveSlot } from "../contracts/resolveContract"
+import { validateVariant } from "../contracts/validateContract"
 
 export type TextProps = {
-  size?: keyof Tokens["typography"]["size"]
-  weight?: keyof Tokens["typography"]["weight"]
-  color?: keyof Tokens["color"]["text"]
+  size?: keyof typeof TextContract.size
+  weight?: keyof typeof TextContract.weight
+  color?: keyof typeof TextContract.color
   children: React.ReactNode
 }
 
 export function Text({ size, weight, color, children }: TextProps) {
+  validateVariant(TextContract.size, "size", size, "Text")
+  validateVariant(TextContract.weight, "weight", weight, "Text")
+  validateVariant(TextContract.color, "color", color, "Text")
+
   const style: React.CSSProperties = {
-    fontFamily: "var(--font-family)",
-    lineHeight: 1.5,
-    ...(size !== undefined && { fontSize: `var(--font-size-${size})` }),
-    ...(weight !== undefined && { fontWeight: `var(--font-weight-${weight})` }),
-    ...(color !== undefined && { color: `var(--color-text-${color})` }),
+    fontFamily: resolveSlot(TextContract.base.fontFamily),
+    lineHeight: TextContract.base.lineHeight,
+    ...(size !== undefined && { fontSize: resolveSlot(TextContract.size[size]) }),
+    ...(weight !== undefined && { fontWeight: resolveSlot(TextContract.weight[weight]) }),
+    ...(color !== undefined && { color: resolveSlot(TextContract.color[color]) }),
   }
 
   return <span style={style}>{children}</span>

@@ -1,3 +1,7 @@
+import { ButtonContract } from "../contracts/ButtonContract"
+import { resolveSlot } from "../contracts/resolveContract"
+import { validateVariant } from "../contracts/validateContract"
+
 export type ButtonProps = {
   variant?: "primary" | "secondary" | "ghost"
   size?: "sm" | "md" | "lg"
@@ -5,44 +9,27 @@ export type ButtonProps = {
   onClick?: () => void
 }
 
-const variantStyles: Record<"primary" | "secondary" | "ghost", React.CSSProperties> = {
-  primary: {
-    background: "var(--color-primary)",
-    color: "var(--color-text-primary)",
-    border: "none",
-  },
-  secondary: {
-    background: "var(--color-surface)",
-    color: "var(--color-text-primary)",
-    border: "1px solid var(--color-border)",
-  },
-  ghost: {
-    background: "transparent",
-    color: "var(--color-text-primary)",
-    border: "none",
-  },
-}
-
-const paddingMap: Record<"sm" | "md" | "lg", string> = {
-  sm: "var(--spacing-xs) var(--spacing-sm)",
-  md: "var(--spacing-sm) var(--spacing-md)",
-  lg: "var(--spacing-md) var(--spacing-lg)",
-}
-
-const fontSizeMap: Record<"sm" | "md" | "lg", string> = {
-  sm: "var(--font-size-sm)",
-  md: "var(--font-size-md)",
-  lg: "var(--font-size-lg)",
-}
-
 export function Button({ variant = "primary", size = "md", children, onClick }: ButtonProps) {
+  validateVariant(ButtonContract.variant, "variant", variant, "Button")
+  validateVariant(ButtonContract.size, "size", size, "Button")
+
+  const v = ButtonContract.variant[variant]
+  const s = ButtonContract.size[size]
+
+  const borderColor = resolveSlot(v.border)
+  const border = borderColor === "transparent" || borderColor === "none"
+    ? "none"
+    : `1px solid ${borderColor}`
+
   const style: React.CSSProperties = {
-    ...variantStyles[variant],
-    padding: paddingMap[size],
-    fontSize: fontSizeMap[size],
-    borderRadius: "var(--radius-md)",
-    fontFamily: "var(--font-family)",
-    fontWeight: "var(--font-weight-medium)",
+    background: resolveSlot(v.background),
+    color: resolveSlot(v.color),
+    border,
+    padding: resolveSlot(s.padding),
+    fontSize: resolveSlot(s.fontSize),
+    borderRadius: resolveSlot(ButtonContract.radius.default),
+    fontFamily: resolveSlot(ButtonContract.base.fontFamily),
+    fontWeight: resolveSlot(ButtonContract.base.fontWeight),
     cursor: "pointer",
     display: "inline-flex",
     alignItems: "center",

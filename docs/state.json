@@ -1,13 +1,13 @@
 {
     "current_feature": "F005-token-contract-system",
-    "current_task_id": "001-contract-type-system",
-    "status": "in_progress",
+    "current_task_id": "",
+    "status": "completed",
     "tasks": [
-        { "id": "001-contract-type-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-button-contract", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-text-contract", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-card-contract", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-runtime-validator", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-storybook-contract-inspector", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-contract-type-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-button-contract", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-text-contract", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-card-contract", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-runtime-validator", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-storybook-contract-inspector", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
