@@ -1,14 +1,13 @@
 {
-    "current_feature": "F004-storybook-integration",
-    "current_task_id": "",
-    "status": "completed",
+    "current_feature": "F005-token-contract-system",
+    "current_task_id": "001-contract-type-system",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-storybook-setup", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-theme-decorator", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-token-stories", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-layout-primitive-stories", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-component-stories", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-composition-stories", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-token-override-controls", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-contract-type-system", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-button-contract", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-text-contract", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-card-contract", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-runtime-validator", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-storybook-contract-inspector", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
