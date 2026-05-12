@@ -14,6 +14,10 @@ All visual decisions originate from a single token structure. Components consume
 - [Tokens](#tokens)
 - [Layout Primitives](#layout-primitives)
 - [Components](#components)
+  - [Core](#core)
+  - [Forms](#forms)
+  - [Navigation & Overlays](#navigation--overlays)
+  - [Data Display](#data-display)
 - [Theming](#theming)
 - [Storybook](#storybook)
 
@@ -33,11 +37,11 @@ tokensToCSSVariables()
         ▼
   ThemeProvider (injects CSS vars into DOM)
         │
-   ┌────┴──────────────┐
-   │                   │
-Layout Primitives   Components
-(Box, Stack, Row,   (Button, Card, Text,
- Container)          Heading, ...)
+   ┌────┴──────────────────────────────┐
+   │                                   │
+Layout Primitives                  Components
+(Box, Stack, Row,           (Core, Forms, Navigation,
+ Container)                  Overlays, Data Display)
 ```
 
 **Four layers:**
@@ -151,6 +155,8 @@ import { Stack, Row, Box, Container } from "lithebox-ui"
 
 All components are styled via CSS variables injected by `ThemeProvider`.
 
+### Core
+
 | Component | Variants / Props |
 |---|---|
 | `Button` | `variant`: `primary` \| `secondary` \| `ghost`; `size`: `sm` \| `md` \| `lg` |
@@ -158,7 +164,7 @@ All components are styled via CSS variables injected by `ThemeProvider`.
 | `Surface` | Semantic background block |
 | `Divider` | Horizontal rule using the border token |
 | `Text` | Body copy with `size` and `color` props |
-| `Heading` | Headings `h1`–`h6` via `level` prop |
+| `Heading` | Headings `h1`–`h4` via `level` prop |
 | `Label` | Form label with secondary text styling |
 | `Icon` | Inline SVG wrapper with token-mapped size and color |
 
@@ -172,6 +178,116 @@ import { Card, Heading, Text, Button, Stack } from "lithebox-ui"
     <Button size="sm">Action</Button>
   </Stack>
 </Card>
+```
+
+---
+
+### Forms
+
+| Component | Purpose |
+|---|---|
+| `Input` | Text input with interaction states and error support |
+| `Textarea` | Multi-line text input |
+| `Select` | Dropdown select with typed option list |
+| `Checkbox` | Controlled checkbox with label |
+| `Radio` | Controlled radio button |
+| `Field` | Wrapper composing a label, control, helper text, and error |
+| `HelperText` | Secondary descriptive text below a form control |
+| `ErrorText` | Semantic error message for form validation |
+
+```tsx
+import { Field, Input, HelperText } from "lithebox-ui"
+
+<Field label="Email" htmlFor="email">
+  <Input id="email" placeholder="you@example.com" />
+  <HelperText>We'll never share your email.</HelperText>
+</Field>
+```
+
+---
+
+### Navigation & Overlays
+
+| Component | Purpose |
+|---|---|
+| `AppShell` | Top-level layout wrapper composing sidebar and content area |
+| `Sidebar` | Fixed side navigation panel |
+| `TopBar` | Horizontal top navigation bar |
+| `ContentArea` | Main scrollable content region |
+| `Modal` | Blocking overlay with backdrop, ESC dismiss, and focus trap |
+| `Drawer` | Slide-in panel overlay anchored to a viewport edge |
+| `Dropdown` | Lightweight contextual menu overlay |
+| `OverlayManagerProvider` | Required context provider for all overlay components |
+
+Overlay components render via React portal and require `OverlayManagerProvider` at the application root.
+
+```tsx
+import { OverlayManagerProvider, Modal, Button } from "lithebox-ui"
+import { useState } from "react"
+
+function App() {
+  const [open, setOpen] = useState(false)
+  return (
+    <OverlayManagerProvider>
+      <Button onClick={() => setOpen(true)}>Open</Button>
+      <Modal open={open} onClose={() => setOpen(false)}>
+        Modal content
+      </Modal>
+    </OverlayManagerProvider>
+  )
+}
+```
+
+---
+
+### Data Display
+
+| Component | Purpose |
+|---|---|
+| `List` | Vertical collection with `spacing` prop (`sm` \| `md` \| `lg`) |
+| `ListItem` | Single item within a `List` |
+| `DescriptionList` | Label/value pair list for metadata and summaries |
+| `DescriptionListItem` | A single `label` + `value` row within a `DescriptionList` |
+| `Table` | Structured tabular layout with `density` prop (`comfortable` \| `compact`) |
+| `TableHeader` | `<thead>` wrapper with header background styling |
+| `TableBody` | `<tbody>` wrapper |
+| `TableRow` | Single table row with border styling |
+| `TableCell` | Table cell; renders as `<th>` when `header` prop is set |
+| `Badge` | Inline semantic status label; `variant`: `default` \| `success` \| `warning` \| `error` \| `info` |
+| `StatusIndicator` | Dot indicator for online/offline-style states; same variants as `Badge` |
+| `EmptyState` | Standardized empty-data UI with title, description, icon, and action slots |
+| `LoadingState` | Standardized loading UI with spinner and optional label |
+| `ErrorState` | Standardized error UI with title, description, and retry action slot |
+
+```tsx
+import { Table, TableHeader, TableBody, TableRow, TableCell, Badge, StatusIndicator } from "lithebox-ui"
+
+<Table density="comfortable">
+  <TableHeader>
+    <TableRow>
+      <TableCell header>Service</TableCell>
+      <TableCell header>Status</TableCell>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>API Server</TableCell>
+      <TableCell>
+        <Badge variant="success">Online</Badge>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+```tsx
+import { EmptyState, Button } from "lithebox-ui"
+
+<EmptyState
+  title="No results found"
+  description="Try adjusting your filters."
+  action={<Button variant="secondary">Clear filters</Button>}
+/>
 ```
 
 ---
@@ -226,10 +342,12 @@ npm run storybook
 ```
 
 Stories cover:
-- Token visualization (color, spacing, typography, radius, shadow)
+- Token visualization (color, spacing, typography, radius)
 - Every layout primitive
 - Every component with all variants
-- Composition examples (forms, cards, navigation patterns)
+- Form composition examples
+- Navigation and overlay patterns
+- Data display composition (tables with badges, empty/loading/error states)
 - Live token override controls via Storybook addon
 
 ---
