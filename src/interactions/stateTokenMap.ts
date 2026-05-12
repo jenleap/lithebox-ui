@@ -7,6 +7,7 @@ export const DEFAULT_STATE_TOKEN_MAP: StateTokenMap = {
   focus: {},
   disabled: { opacity: "0.5", cursor: "not-allowed", filter: "none" },
   loading: { opacity: "0.7", cursor: "progress" },
+  error: { cursor: "default" },
 }
 
 export function resolveStateStyles(

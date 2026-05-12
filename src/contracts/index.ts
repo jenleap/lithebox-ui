@@ -2,5 +2,7 @@ export type { SemanticSlot, LiteralSlot, SlotValue, ContractSlotMap, ResolvedCon
 export { ButtonContract } from "./ButtonContract"
 export { TextContract } from "./TextContract"
 export { CardContract } from "./CardContract"
+export { InputContract } from "./InputContract"
+export { InputInteractionContract } from "./InputInteractionContract"
 export { resolveSlot } from "./resolveContract"
 export { validateVariant, STRICT_MODE } from "./validateContract"

@@ -1,4 +1,4 @@
-export type InteractionState = "idle" | "hover" | "active" | "focus" | "disabled" | "loading"
+export type InteractionState = "idle" | "hover" | "active" | "focus" | "disabled" | "loading" | "error"
 
 export type InteractionTransition = {
   from: InteractionState
