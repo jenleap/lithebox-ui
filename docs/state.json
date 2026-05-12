@@ -1,18 +1,16 @@
 {
-    "current_feature": "F007-form-system",
-    "current_task_id": "001-error-interaction-state",
-    "status": "completed",
+    "current_feature": "F008-navigation-system",
+    "current_task_id": "001-layer-system-types",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-error-interaction-state", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-input-token-contract", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-input-interaction-contract", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-input-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-textarea-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-select-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-checkbox-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-radio-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "009-field-helper-components", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "010-field-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "011-storybook-form-stories", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-layer-system-types", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-overlay-manager", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-navigation-structure-contracts", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-overlay-token-contracts", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-app-shell-components", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-modal-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-drawer-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-dropdown-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
