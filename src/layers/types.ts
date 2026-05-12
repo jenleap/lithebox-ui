@@ -1,4 +1,4 @@
-export type LayerLevel = "base" | "dropdown" | "drawer" | "modal" | "critical"
+export type LayerLevel = "base" | "dropdown" | "toast" | "drawer" | "modal" | "critical"
 
 export type VisibilityState = "hidden" | "visible" | "transitioning"
 

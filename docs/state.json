@@ -1,15 +1,15 @@
 {
     "current_feature": "F011-feedback-system",
-    "current_task_id": "001-feedback-token-contracts",
-    "status": "in_progress",
+    "current_task_id": "008-storybook-stories",
+    "status": "completed",
     "tasks": [
-        { "id": "001-feedback-token-contracts", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-notification-manager", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-toast-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-use-toast-hook", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-banner-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-public-api", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-unit-tests", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-feedback-token-contracts", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-notification-manager", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-toast-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-use-toast-hook", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-banner-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-public-api", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-unit-tests", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
