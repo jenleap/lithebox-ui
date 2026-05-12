@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm test *)",
-      "Bash(mkdir \"c:\\\\Sites\\\\lithebox-ui\\\\docs\\\\tasks\\\\F009\")"
+      "Bash(mkdir \"c:\\\\Sites\\\\lithebox-ui\\\\docs\\\\tasks\\\\F009\")",
+      "Bash(npm run *)"
     ],
     "additionalDirectories": [
       "c:\\Sites\\lithebox-ui\\docs\\tasks"

@@ -1,15 +1,15 @@
 {
     "current_feature": "F009-data-display-system",
-    "current_task_id": "001-data-display-token-contracts",
-    "status": "in_progress",
+    "current_task_id": "008-storybook-stories",
+    "status": "completed",
     "tasks": [
-        { "id": "001-data-display-token-contracts", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-list-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-table-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-content-state-components", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-status-components", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-public-api", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-unit-tests", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-data-display-token-contracts", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-list-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-table-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-content-state-components", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-status-components", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-public-api", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-unit-tests", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
