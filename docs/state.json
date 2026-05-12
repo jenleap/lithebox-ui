@@ -1,16 +1,16 @@
 {
     "current_feature": "F010-page-composition-system",
-    "current_task_id": "001-page-composition-token-contracts",
-    "status": "in_progress",
+    "current_task_id": "009-storybook-stories",
+    "status": "completed",
     "tasks": [
-        { "id": "001-page-composition-token-contracts", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-page-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-section-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-layout-presets", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-page-state-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-composition-rules", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-public-api", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-unit-tests", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "009-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-page-composition-token-contracts", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-page-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-section-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-layout-presets", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-page-state-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-composition-rules", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-public-api", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-unit-tests", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "009-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
     ]
 }

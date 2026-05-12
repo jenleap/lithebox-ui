@@ -103,3 +103,21 @@ export { Badge } from "./components/Badge"
 export type { BadgeProps, BadgeVariant } from "./components/Badge"
 export { StatusIndicator } from "./components/StatusIndicator"
 export type { StatusIndicatorProps, StatusIndicatorVariant } from "./components/StatusIndicator"
+
+export { Page } from "./components/Page"
+export type { PageProps, PageState, PageLayout } from "./components/Page"
+
+export { PageHeader } from "./components/PageHeader"
+export type { PageHeaderProps } from "./components/PageHeader"
+
+export { PageContent } from "./components/PageContent"
+export type { PageContentProps } from "./components/PageContent"
+
+export { PageSidebar } from "./components/PageSidebar"
+export type { PageSidebarProps } from "./components/PageSidebar"
+
+export { PageFooter } from "./components/PageFooter"
+export type { PageFooterProps } from "./components/PageFooter"
+
+export { Section, SectionHeader, SectionContent } from "./components/Section"
+export type { SectionProps, SectionHeaderProps, SectionContentProps } from "./components/Section"
