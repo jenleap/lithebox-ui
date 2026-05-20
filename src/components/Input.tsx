@@ -2,6 +2,7 @@ import { InputContract } from "../contracts/InputContract"
 import { InputInteractionContract } from "../contracts/InputInteractionContract"
 import { resolveSlot } from "../contracts/resolveContract"
 import { useInteractionState } from "../interactions"
+import { resolveA11yState } from "../a11y/resolveA11yState"
 
 export type InputProps = {
   value: string
@@ -10,6 +11,7 @@ export type InputProps = {
   disabled?: boolean
   error?: boolean
   id?: string
+  "aria-describedby"?: string
 }
 
 export function Input({
@@ -19,6 +21,7 @@ export function Input({
   disabled = false,
   error = false,
   id,
+  "aria-describedby": ariaDescribedBy,
 }: InputProps) {
   const { state, interactionProps, stateStyles } = useInteractionState({
     disabled,
@@ -50,6 +53,7 @@ export function Input({
   }
 
   const style: React.CSSProperties = { ...baseStyle, ...stateStyles }
+  const a11yProps = resolveA11yState({ disabled, error })
 
   return (
     <input
@@ -60,6 +64,8 @@ export function Input({
       placeholder={placeholder}
       disabled={disabled}
       style={style}
+      aria-describedby={ariaDescribedBy}
+      {...a11yProps}
       {...interactionProps}
     />
   )

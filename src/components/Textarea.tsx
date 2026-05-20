@@ -2,6 +2,7 @@ import { InputContract } from "../contracts/InputContract"
 import { InputInteractionContract } from "../contracts/InputInteractionContract"
 import { resolveSlot } from "../contracts/resolveContract"
 import { useInteractionState } from "../interactions"
+import { resolveA11yState } from "../a11y/resolveA11yState"
 
 export type TextareaProps = {
   value: string
@@ -11,6 +12,7 @@ export type TextareaProps = {
   error?: boolean
   rows?: number
   id?: string
+  "aria-describedby"?: string
 }
 
 export function Textarea({
@@ -21,6 +23,7 @@ export function Textarea({
   error = false,
   rows = 4,
   id,
+  "aria-describedby": ariaDescribedBy,
 }: TextareaProps) {
   const { state, interactionProps, stateStyles } = useInteractionState({
     disabled,
@@ -53,6 +56,7 @@ export function Textarea({
   }
 
   const style: React.CSSProperties = { ...baseStyle, ...stateStyles }
+  const a11yProps = resolveA11yState({ disabled, error })
 
   return (
     <textarea
@@ -63,6 +67,8 @@ export function Textarea({
       disabled={disabled}
       rows={rows}
       style={style}
+      aria-describedby={ariaDescribedBy}
+      {...a11yProps}
       {...interactionProps}
     />
   )

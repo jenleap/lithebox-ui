@@ -2,6 +2,7 @@ import { InputContract } from "../contracts/InputContract"
 import { InputInteractionContract } from "../contracts/InputInteractionContract"
 import { resolveSlot } from "../contracts/resolveContract"
 import { useInteractionState } from "../interactions"
+import { resolveA11yState } from "../a11y/resolveA11yState"
 
 export type SelectOption = {
   value: string
@@ -16,6 +17,7 @@ export type SelectProps = {
   disabled?: boolean
   error?: boolean
   id?: string
+  "aria-describedby"?: string
 }
 
 export function Select({
@@ -26,6 +28,7 @@ export function Select({
   disabled = false,
   error = false,
   id,
+  "aria-describedby": ariaDescribedBy,
 }: SelectProps) {
   const { state, interactionProps, stateStyles } = useInteractionState({
     disabled,
@@ -58,6 +61,7 @@ export function Select({
   }
 
   const style: React.CSSProperties = { ...baseStyle, ...stateStyles }
+  const a11yProps = resolveA11yState({ disabled, error })
 
   return (
     <select
@@ -66,6 +70,8 @@ export function Select({
       onChange={e => onChange(e.target.value)}
       disabled={disabled}
       style={style}
+      aria-describedby={ariaDescribedBy}
+      {...a11yProps}
       {...interactionProps}
     >
       {placeholder && (

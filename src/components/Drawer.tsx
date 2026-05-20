@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from "react"
 import ReactDOM from "react-dom"
 import { LAYER_Z_INDEX } from "../layers/layerStack"
 import { useOverlay } from "../layers/useOverlay"
+import { focusManager } from "../a11y/focusManager"
+import { useFocusTrap } from "../a11y/useFocusTrap"
+import { DrawerA11yContract } from "../a11y/ariaContracts"
 
 export type DrawerProps = {
   open: boolean
@@ -14,6 +17,14 @@ export function Drawer({ open, onClose, side = "left", children }: DrawerProps) 
   const { portalRoot } = useOverlay({ id: "drawer", layer: "drawer" })
   const panelRef = useRef<HTMLDivElement>(null)
 
+  useFocusTrap(panelRef, open)
+
+  useEffect(() => {
+    if (!open) return
+    focusManager.push(panelRef.current)
+    return () => focusManager.pop()
+  }, [open])
+
   useEffect(() => {
     if (!open) return
     const handleKey = (e: KeyboardEvent) => {
@@ -22,12 +33,6 @@ export function Drawer({ open, onClose, side = "left", children }: DrawerProps) 
     document.addEventListener("keydown", handleKey)
     return () => document.removeEventListener("keydown", handleKey)
   }, [open, onClose])
-
-  useEffect(() => {
-    if (open) {
-      panelRef.current?.focus()
-    }
-  }, [open])
 
   if (!open || !portalRoot) return null
 
@@ -44,7 +49,6 @@ export function Drawer({ open, onClose, side = "left", children }: DrawerProps) 
     bottom: 0,
     [side === "right" ? "right" : "left"]: 0,
     width: "var(--spacing-drawer, 320px)",
-    // panel sits above its own backdrop within the drawer layer
     zIndex: LAYER_Z_INDEX.drawer + 1,
     background: "var(--color-surface)",
     boxShadow: "var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.15))",
@@ -56,7 +60,13 @@ export function Drawer({ open, onClose, side = "left", children }: DrawerProps) 
   return ReactDOM.createPortal(
     <>
       <div style={backdropStyle} onClick={onClose} />
-      <div ref={panelRef} tabIndex={-1} style={panelStyle}>
+      <div
+        ref={panelRef}
+        role={DrawerA11yContract.role}
+        aria-modal="true"
+        tabIndex={-1}
+        style={panelStyle}
+      >
         {children}
       </div>
     </>,

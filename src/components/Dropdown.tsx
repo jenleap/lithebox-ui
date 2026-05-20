@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
 import ReactDOM from "react-dom"
 import { LAYER_Z_INDEX } from "../layers/layerStack"
 import { useOverlay } from "../layers/useOverlay"
+import { DropdownA11yContract } from "../a11y/ariaContracts"
 
 export type DropdownProps = {
   open: boolean
@@ -25,7 +26,25 @@ export function Dropdown({ open, onClose, anchorRef, children }: DropdownProps) 
   useEffect(() => {
     if (!open) return
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose()
+      if (e.key === "Escape") {
+        onClose()
+        return
+      }
+      const surface = surfaceRef.current
+      if (!surface) return
+      const items = Array.from(surface.querySelectorAll<HTMLElement>('[role="menuitem"]'))
+      if (items.length === 0) return
+      const current = document.activeElement as HTMLElement
+      const idx = items.indexOf(current)
+      if (e.key === "ArrowDown") {
+        e.preventDefault()
+        const next = idx < items.length - 1 ? items[idx + 1] : items[0]
+        next.focus()
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault()
+        const prev = idx > 0 ? items[idx - 1] : items[items.length - 1]
+        prev.focus()
+      }
     }
     document.addEventListener("keydown", handleKey)
     return () => document.removeEventListener("keydown", handleKey)
@@ -59,7 +78,7 @@ export function Dropdown({ open, onClose, anchorRef, children }: DropdownProps) 
   }
 
   return ReactDOM.createPortal(
-    <div ref={surfaceRef} style={surfaceStyle}>
+    <div ref={surfaceRef} role={DropdownA11yContract.role} style={surfaceStyle}>
       {children}
     </div>,
     portalRoot

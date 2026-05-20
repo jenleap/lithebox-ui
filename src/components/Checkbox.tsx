@@ -1,5 +1,6 @@
 import { InputContract } from "../contracts/InputContract"
 import { resolveSlot } from "../contracts/resolveContract"
+import { resolveA11yState } from "../a11y/resolveA11yState"
 
 export type CheckboxProps = {
   checked: boolean
@@ -39,6 +40,8 @@ export function Checkbox({
     cursor: disabled ? "not-allowed" : "pointer",
   }
 
+  const a11yProps = resolveA11yState({ disabled, error })
+
   return (
     <div style={wrapperStyle}>
       <input
@@ -48,6 +51,7 @@ export function Checkbox({
         onChange={e => onChange(e.target.checked)}
         disabled={disabled}
         style={{ cursor: disabled ? "not-allowed" : "pointer" }}
+        {...a11yProps}
       />
       {label && (
         <label htmlFor={id} style={labelStyle}>

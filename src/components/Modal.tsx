@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from "react"
 import ReactDOM from "react-dom"
 import { LAYER_Z_INDEX } from "../layers/layerStack"
 import { useOverlay } from "../layers/useOverlay"
+import { focusManager } from "../a11y/focusManager"
+import { useFocusTrap } from "../a11y/useFocusTrap"
+import { ModalA11yContract } from "../a11y/ariaContracts"
 
 export type ModalProps = {
   open: boolean
@@ -13,6 +16,14 @@ export function Modal({ open, onClose, children }: ModalProps) {
   const { portalRoot } = useOverlay({ id: "modal", layer: "modal" })
   const surfaceRef = useRef<HTMLDivElement>(null)
 
+  useFocusTrap(surfaceRef, open)
+
+  useEffect(() => {
+    if (!open) return
+    focusManager.push(surfaceRef.current)
+    return () => focusManager.pop()
+  }, [open])
+
   useEffect(() => {
     if (!open) return
     const handleKey = (e: KeyboardEvent) => {
@@ -21,12 +32,6 @@ export function Modal({ open, onClose, children }: ModalProps) {
     document.addEventListener("keydown", handleKey)
     return () => document.removeEventListener("keydown", handleKey)
   }, [open, onClose])
-
-  useEffect(() => {
-    if (open) {
-      surfaceRef.current?.focus()
-    }
-  }, [open])
 
   if (!open || !portalRoot) return null
 
@@ -54,6 +59,8 @@ export function Modal({ open, onClose, children }: ModalProps) {
     <div style={backdropStyle} onClick={onClose}>
       <div
         ref={surfaceRef}
+        role={ModalA11yContract.role}
+        aria-modal="true"
         tabIndex={-1}
         style={surfaceStyle}
         onClick={e => e.stopPropagation()}

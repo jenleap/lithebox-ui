@@ -1,3 +1,4 @@
+import React from "react"
 import { InputContract } from "../contracts/InputContract"
 import { resolveSlot } from "../contracts/resolveContract"
 import { ErrorText } from "./ErrorText"
@@ -29,6 +30,15 @@ export function Field({
     gap: resolveSlot(InputContract.spacing.gap),
   }
 
+  const errorId = htmlFor && error ? `${htmlFor}-error` : undefined
+
+  const childWithA11y =
+    error && errorId
+      ? React.cloneElement(children as React.ReactElement<{ "aria-describedby"?: string }>, {
+          "aria-describedby": errorId,
+        })
+      : children
+
   return (
     <div style={style}>
       {label && (
@@ -36,8 +46,12 @@ export function Field({
           {label}
         </Label>
       )}
-      {children}
-      {error ? <ErrorText>{error}</ErrorText> : helperText ? <HelperText>{helperText}</HelperText> : null}
+      {childWithA11y}
+      {error ? (
+        <ErrorText id={errorId}>{error}</ErrorText>
+      ) : helperText ? (
+        <HelperText>{helperText}</HelperText>
+      ) : null}
     </div>
   )
 }
