@@ -1,18 +1,18 @@
 {
-    "current_feature": "F012-accessibility-architecture",
-    "current_task_id": "011-storybook-stories",
-    "status": "completed",
+    "current_feature": "F013-animation-layer",
+    "current_task_id": "001-motion-token-types",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-a11y-types-aria-contracts", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-focus-manager", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-focus-trap-hook", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-keyboard-navigation-hook", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-accessibility-state-model", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-overlay-integration", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-form-integration", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-navigation-data-integration", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "009-public-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "010-unit-tests", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "011-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-motion-token-types", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-motion-primitives", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-motion-contract-system", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-use-reduced-motion", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-use-motion-transition", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-overlay-motion-integration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-feedback-motion-integration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-page-transition-system", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-public-api", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "010-unit-tests", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "011-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
