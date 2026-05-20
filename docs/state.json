@@ -1,15 +1,18 @@
 {
-    "current_feature": "F011-feedback-system",
-    "current_task_id": "008-storybook-stories",
-    "status": "completed",
+    "current_feature": "F012-accessibility-architecture",
+    "current_task_id": "001-a11y-types-aria-contracts",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-feedback-token-contracts", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-notification-manager", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-toast-system", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-use-toast-hook", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-banner-system", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-public-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-unit-tests", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-a11y-types-aria-contracts", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-focus-manager", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-focus-trap-hook", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-keyboard-navigation-hook", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-accessibility-state-model", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-overlay-integration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-form-integration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-navigation-data-integration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-public-api", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "010-unit-tests", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "011-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
     ]
 }

@@ -173,3 +173,4 @@
 {"timestamp":"2026-05-12T00:13:00Z","event":"task_completed","feature_id":"F011-feedback-system","task_id":"007-unit-tests","notes":"221 tests passing including 29 new tests"}
 {"timestamp":"2026-05-12T00:14:00Z","event":"task_started","feature_id":"F011-feedback-system","task_id":"008-storybook-stories","notes":""}
 {"timestamp":"2026-05-12T00:15:00Z","event":"task_completed","feature_id":"F011-feedback-system","task_id":"008-storybook-stories","notes":""}
+{"timestamp":"2026-05-20T00:00:00Z","event":"task_started","feature_id":"F012-accessibility-architecture","task_id":"task-generation","notes":"Generated 11 tasks for F012"}
