@@ -3,6 +3,9 @@ import ReactDOM from "react-dom"
 import { LAYER_Z_INDEX } from "../layers/layerStack"
 import { useOverlay } from "../layers/useOverlay"
 import { DropdownA11yContract } from "../a11y/ariaContracts"
+import { useMotionTransition } from "../motion/useMotionTransition"
+import { DropdownMotionContract } from "../motion/contracts"
+import { duration } from "../motion/motionTokens"
 
 export type DropdownProps = {
   open: boolean
@@ -15,6 +18,17 @@ export function Dropdown({ open, onClose, anchorRef, children }: DropdownProps) 
   const { portalRoot } = useOverlay({ id: "dropdown", layer: "dropdown" })
   const surfaceRef = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState({ top: 0, left: 0 })
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    if (open) {
+      setMounted(true)
+    } else {
+      const delay = parseInt(duration.fast, 10)
+      const timer = setTimeout(() => setMounted(false), delay)
+      return () => clearTimeout(timer)
+    }
+  }, [open])
 
   // useLayoutEffect to avoid a flash at 0,0 before positioning
   useLayoutEffect(() => {
@@ -62,7 +76,9 @@ export function Dropdown({ open, onClose, anchorRef, children }: DropdownProps) 
     return () => document.removeEventListener("mousedown", handleClick)
   }, [open, onClose, anchorRef])
 
-  if (!open || !portalRoot) return null
+  const panelMotion = useMotionTransition(DropdownMotionContract, open)
+
+  if (!mounted || !portalRoot) return null
 
   const surfaceStyle: React.CSSProperties = {
     position: "absolute",
@@ -75,6 +91,7 @@ export function Dropdown({ open, onClose, anchorRef, children }: DropdownProps) 
     boxShadow: "var(--shadow-sm)",
     padding: "var(--spacing-xs)",
     minWidth: 160,
+    ...panelMotion,
   }
 
   return ReactDOM.createPortal(

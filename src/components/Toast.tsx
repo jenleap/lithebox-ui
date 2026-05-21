@@ -3,6 +3,8 @@ import { resolveSlot } from "../contracts/resolveContract"
 import { ToastContract } from "../contracts/ToastContract"
 import type { ToastEntry } from "../feedback/types"
 import { notificationManager } from "../feedback/notificationManager"
+import { useMotionTransition } from "../motion/useMotionTransition"
+import { ToastMotionContract } from "../motion/contracts"
 
 type ToastProps = {
   toast: ToastEntry
@@ -16,7 +18,7 @@ export function Toast({ toast }: ToastProps) {
   const padding = resolveSlot(ToastContract.spacing.padding)
   const borderRadius = resolveSlot(ToastContract.radius.default)
 
-  const isExiting = toast.lifecycleState === "exiting"
+  const motionStyles = useMotionTransition(ToastMotionContract, toast.lifecycleState !== "exiting")
 
   return (
     <div
@@ -30,13 +32,11 @@ export function Toast({ toast }: ToastProps) {
         minWidth: "280px",
         maxWidth: "400px",
         boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-        opacity: isExiting ? 0 : 1,
-        transform: isExiting ? "translateY(-8px)" : "translateY(0)",
-        transition: "opacity 300ms ease, transform 300ms ease",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "space-between",
         gap: "8px",
+        ...motionStyles,
       }}
     >
       <div>

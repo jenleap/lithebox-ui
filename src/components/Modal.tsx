@@ -1,10 +1,15 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import ReactDOM from "react-dom"
 import { LAYER_Z_INDEX } from "../layers/layerStack"
 import { useOverlay } from "../layers/useOverlay"
 import { focusManager } from "../a11y/focusManager"
 import { useFocusTrap } from "../a11y/useFocusTrap"
 import { ModalA11yContract } from "../a11y/ariaContracts"
+import { useMotionTransition } from "../motion/useMotionTransition"
+import { ModalMotionContract, BannerMotionContract } from "../motion/contracts"
+import { duration } from "../motion/motionTokens"
+
+const BackdropMotionContract = BannerMotionContract
 
 export type ModalProps = {
   open: boolean
@@ -15,6 +20,17 @@ export type ModalProps = {
 export function Modal({ open, onClose, children }: ModalProps) {
   const { portalRoot } = useOverlay({ id: "modal", layer: "modal" })
   const surfaceRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    if (open) {
+      setMounted(true)
+    } else {
+      const delay = parseInt(duration.fast, 10)
+      const timer = setTimeout(() => setMounted(false), delay)
+      return () => clearTimeout(timer)
+    }
+  }, [open])
 
   useFocusTrap(surfaceRef, open)
 
@@ -33,7 +49,10 @@ export function Modal({ open, onClose, children }: ModalProps) {
     return () => document.removeEventListener("keydown", handleKey)
   }, [open, onClose])
 
-  if (!open || !portalRoot) return null
+  const backdropMotion = useMotionTransition(BackdropMotionContract, open)
+  const surfaceMotion = useMotionTransition(ModalMotionContract, open)
+
+  if (!mounted || !portalRoot) return null
 
   const backdropStyle: React.CSSProperties = {
     position: "fixed",
@@ -43,6 +62,7 @@ export function Modal({ open, onClose, children }: ModalProps) {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    ...backdropMotion,
   }
 
   const surfaceStyle: React.CSSProperties = {
@@ -53,6 +73,7 @@ export function Modal({ open, onClose, children }: ModalProps) {
     maxWidth: "560px",
     width: "100%",
     outline: "none",
+    ...surfaceMotion,
   }
 
   return ReactDOM.createPortal(

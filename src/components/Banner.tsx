@@ -3,6 +3,8 @@ import { resolveSlot } from "../contracts/resolveContract"
 import { BannerContract } from "../contracts/BannerContract"
 import type { BannerEntry } from "../feedback/types"
 import { notificationManager } from "../feedback/notificationManager"
+import { useMotionTransition } from "../motion/useMotionTransition"
+import { BannerMotionContract } from "../motion/contracts"
 
 type BannerProps = {
   banner: BannerEntry
@@ -16,7 +18,7 @@ export function Banner({ banner }: BannerProps) {
   const borderColor = resolveSlot(contract.border)
   const padding = resolveSlot(BannerContract.spacing.padding)
 
-  const isDismissed = banner.lifecycleState === "dismissed"
+  const motionStyles = useMotionTransition(BannerMotionContract, banner.lifecycleState !== "dismissed")
 
   return (
     <div
@@ -31,8 +33,7 @@ export function Banner({ banner }: BannerProps) {
         alignItems: "flex-start",
         justifyContent: "space-between",
         gap: "8px",
-        opacity: isDismissed ? 0 : 1,
-        transition: "opacity 300ms ease",
+        ...motionStyles,
       }}
     >
       <div>

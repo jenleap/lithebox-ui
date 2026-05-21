@@ -1,10 +1,15 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import ReactDOM from "react-dom"
 import { LAYER_Z_INDEX } from "../layers/layerStack"
 import { useOverlay } from "../layers/useOverlay"
 import { focusManager } from "../a11y/focusManager"
 import { useFocusTrap } from "../a11y/useFocusTrap"
 import { DrawerA11yContract } from "../a11y/ariaContracts"
+import { useMotionTransition } from "../motion/useMotionTransition"
+import { DrawerLeftMotionContract, DrawerRightMotionContract, BannerMotionContract } from "../motion/contracts"
+import { duration } from "../motion/motionTokens"
+
+const BackdropMotionContract = BannerMotionContract
 
 export type DrawerProps = {
   open: boolean
@@ -16,6 +21,17 @@ export type DrawerProps = {
 export function Drawer({ open, onClose, side = "left", children }: DrawerProps) {
   const { portalRoot } = useOverlay({ id: "drawer", layer: "drawer" })
   const panelRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    if (open) {
+      setMounted(true)
+    } else {
+      const delay = parseInt(duration.fast, 10)
+      const timer = setTimeout(() => setMounted(false), delay)
+      return () => clearTimeout(timer)
+    }
+  }, [open])
 
   useFocusTrap(panelRef, open)
 
@@ -34,13 +50,18 @@ export function Drawer({ open, onClose, side = "left", children }: DrawerProps) 
     return () => document.removeEventListener("keydown", handleKey)
   }, [open, onClose])
 
-  if (!open || !portalRoot) return null
+  const contract = side === "right" ? DrawerRightMotionContract : DrawerLeftMotionContract
+  const backdropMotion = useMotionTransition(BackdropMotionContract, open)
+  const panelMotion = useMotionTransition(contract, open)
+
+  if (!mounted || !portalRoot) return null
 
   const backdropStyle: React.CSSProperties = {
     position: "fixed",
     inset: 0,
     zIndex: LAYER_Z_INDEX.drawer,
     background: "rgba(0, 0, 0, 0.4)",
+    ...backdropMotion,
   }
 
   const panelStyle: React.CSSProperties = {
@@ -55,6 +76,7 @@ export function Drawer({ open, onClose, side = "left", children }: DrawerProps) 
     padding: "var(--spacing-lg)",
     overflowY: "auto",
     outline: "none",
+    ...panelMotion,
   }
 
   return ReactDOM.createPortal(

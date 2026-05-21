@@ -137,3 +137,37 @@ export type {
   ToastLifecycleState,
   BannerLifecycleState,
 } from "./feedback/types"
+
+export { duration, easing, motionScale, motionTokens } from "./motion"
+export type {
+  DurationTokens,
+  EasingTokens,
+  MotionScaleTokens,
+  MotionTokens,
+  MotionPrimitive,
+  MotionContract,
+  MotionPhase,
+} from "./motion"
+export {
+  EnterPrimitive,
+  ExitPrimitive,
+  SlideInLeftPrimitive,
+  SlideOutLeftPrimitive,
+  SlideInRightPrimitive,
+  SlideOutRightPrimitive,
+  FadeInPrimitive,
+  FadeOutPrimitive,
+  LayoutPrimitive,
+} from "./motion"
+export {
+  ModalMotionContract,
+  DrawerLeftMotionContract,
+  DrawerRightMotionContract,
+  DropdownMotionContract,
+  ToastMotionContract,
+  BannerMotionContract,
+  PageMotionContract,
+} from "./motion"
+export { useReducedMotion, useMotionTransition, usePageTransition } from "./motion"
+export { PageTransition } from "./motion"
+export type { PageTransitionProps } from "./motion"
