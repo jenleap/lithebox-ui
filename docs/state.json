@@ -1,19 +1,16 @@
 {
-    "current_feature": "F015-metadata-system",
-    "current_task_id": "012-storybook-stories",
-    "status": "completed",
+    "current_feature": "F016-runtime",
+    "current_task_id": "001-runtime-types",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-metadata-type-system", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-component-registry", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-layout-metadata", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-primitive-metadata", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-form-metadata", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-navigation-overlay-metadata", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-data-display-metadata", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-feedback-metadata", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "009-pattern-registry", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "010-public-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "011-unit-tests", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "012-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-runtime-types", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-environment-detection", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-runtime-context", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-token-hydration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-portal-management", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-lithebox-provider", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-runtime-index", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-unit-tests", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
