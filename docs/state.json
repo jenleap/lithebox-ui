@@ -1,18 +1,18 @@
 {
-    "current_feature": "F013-animation-layer",
-    "current_task_id": "011-storybook-stories",
-    "status": "completed",
+    "current_feature": "F014-responsive-system",
+    "current_task_id": "001-breakpoint-token-types",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-motion-token-types", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-motion-primitives", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-motion-contract-system", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-use-reduced-motion", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-use-motion-transition", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-overlay-motion-integration", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-feedback-motion-integration", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-page-transition-system", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "009-public-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "010-unit-tests", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "011-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-breakpoint-token-types", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-responsive-context-provider", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-use-breakpoint-hook", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-responsive-contract-system", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-layout-primitives-responsive", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-page-composition-responsive", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-navigation-responsive", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-data-display-responsive", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-public-api", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "010-unit-tests", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "011-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
