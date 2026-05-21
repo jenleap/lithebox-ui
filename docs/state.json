@@ -1,19 +1,19 @@
 {
     "current_feature": "F015-metadata-system",
-    "current_task_id": "001-metadata-type-system",
-    "status": "in_progress",
+    "current_task_id": "012-storybook-stories",
+    "status": "completed",
     "tasks": [
-        { "id": "001-metadata-type-system", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-component-registry", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-layout-metadata", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-primitive-metadata", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-form-metadata", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-navigation-overlay-metadata", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-data-display-metadata", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-feedback-metadata", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "009-pattern-registry", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "010-public-api", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "011-unit-tests", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "012-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-metadata-type-system", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-component-registry", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-layout-metadata", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-primitive-metadata", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-form-metadata", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-navigation-overlay-metadata", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-data-display-metadata", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-feedback-metadata", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "009-pattern-registry", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "010-public-api", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "011-unit-tests", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "012-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
     ]
 }

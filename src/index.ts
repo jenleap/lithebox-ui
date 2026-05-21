@@ -173,3 +173,6 @@ export { PageTransition } from "./motion"
 export type { PageTransitionProps } from "./motion"
 
 export * from "./responsive"
+
+// Metadata System (F015)
+export * from "./metadata"
