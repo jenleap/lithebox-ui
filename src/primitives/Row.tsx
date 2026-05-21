@@ -1,7 +1,14 @@
+import { useContext } from "react"
+import { ResponsiveContext } from "../responsive/ResponsiveContext"
+import { resolveResponsiveValue } from "../responsive/responsiveContract"
 import type { Tokens } from "../tokens/types"
+import type { ResponsiveValue } from "../responsive/types"
+
+type SpacingKey = keyof Tokens["spacing"]
 
 export type RowProps = {
-  gap?: keyof Tokens["spacing"]
+  gap?: SpacingKey | ResponsiveValue<SpacingKey>
+  wrap?: boolean | ResponsiveValue<boolean>
   justify?: "start" | "center" | "end" | "between"
   align?: "start" | "center" | "end" | "stretch"
   children?: React.ReactNode
@@ -21,11 +28,24 @@ const alignMap: Record<NonNullable<RowProps["align"]>, string> = {
   stretch: "stretch",
 }
 
-export function Row({ gap, justify, align, children }: RowProps) {
+export function Row({ gap, wrap, justify, align, children }: RowProps) {
+  const { breakpoint } = useContext(ResponsiveContext)
+
+  const resolvedGap =
+    gap !== undefined && typeof gap === "object"
+      ? resolveResponsiveValue(gap, breakpoint)
+      : gap
+
+  const resolvedWrap =
+    wrap !== undefined && typeof wrap === "object"
+      ? resolveResponsiveValue(wrap, breakpoint)
+      : wrap
+
   const style: React.CSSProperties = {
     display: "flex",
     flexDirection: "row",
-    ...(gap !== undefined && { gap: `var(--spacing-${gap})` }),
+    ...(resolvedGap !== undefined && { gap: `var(--spacing-${resolvedGap})` }),
+    ...(resolvedWrap !== undefined && { flexWrap: resolvedWrap ? "wrap" : "nowrap" }),
     ...(justify !== undefined && { justifyContent: justifyMap[justify] }),
     ...(align !== undefined && { alignItems: alignMap[align] }),
   }

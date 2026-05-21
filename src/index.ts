@@ -65,9 +65,9 @@ export { Field } from "./components/Field"
 export type { FieldProps } from "./components/Field"
 
 export { AppShell } from "./components/AppShell"
-export type { AppShellProps } from "./components/AppShell"
-export { Sidebar } from "./components/Sidebar"
-export type { SidebarProps } from "./components/Sidebar"
+export type { AppShellProps, SidebarMode } from "./components/AppShell"
+export { Sidebar, useSidebarMode } from "./components/Sidebar"
+export type { SidebarProps, SidebarModeContextValue } from "./components/Sidebar"
 export { TopBar } from "./components/TopBar"
 export type { TopBarProps } from "./components/TopBar"
 export { ContentArea } from "./components/ContentArea"
@@ -171,3 +171,5 @@ export {
 export { useReducedMotion, useMotionTransition, usePageTransition } from "./motion"
 export { PageTransition } from "./motion"
 export type { PageTransitionProps } from "./motion"
+
+export * from "./responsive"
