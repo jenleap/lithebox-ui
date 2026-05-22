@@ -343,3 +343,4 @@
 {"timestamp":"2026-05-21T00:17:00Z","event":"task_completed","feature_id":"F019-validation-constraint","task_id":"009-exports","notes":""}
 {"timestamp":"2026-05-21T00:18:00Z","event":"task_started","feature_id":"F019-validation-constraint","task_id":"010-unit-tests","notes":""}
 {"timestamp":"2026-05-21T00:19:00Z","event":"task_completed","feature_id":"F019-validation-constraint","task_id":"010-unit-tests","notes":"55 test files, 475 tests, all passed"}
+{"timestamp":"2026-05-21T00:00:00Z","event":"task_started","feature_id":"F020-versioning","task_id":"task-generation","notes":"Generated 11 tasks for F020 Versioning and Migration System"}

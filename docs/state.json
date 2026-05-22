@@ -1,17 +1,18 @@
 {
-    "current_feature": "F019-validation-constraint",
-    "current_task_id": "010-unit-tests",
-    "status": "completed",
+    "current_feature": "F020-versioning",
+    "current_task_id": "001-types",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-types", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-prop-validator", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-composition-validator", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-slot-validator", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-accessibility-validator", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-responsive-validator", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-metadata-validator", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-validation-pipeline", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "009-exports", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "010-unit-tests", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-types", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-version-registry", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-migration-registry", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-migration-engine", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-deprecation-system", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-token-compatibility", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-metadata-compatibility", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-contract-compatibility", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-runtime-integration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "010-exports", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "011-unit-tests", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
