@@ -1,19 +1,19 @@
 {
     "current_feature": "F022-diagnostics",
-    "current_task_id": "001-types",
-    "status": "in_progress",
+    "current_task_id": "012-unit-tests",
+    "status": "completed",
     "tasks": [
-        { "id": "001-types", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-component-tree-introspection", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-token-resolution-introspection", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-theme-introspection", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-validation-introspection", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-metadata-introspection", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-system-health-snapshot", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-environment-gating", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "009-introspection-api", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "010-integration", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "011-exports", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "012-unit-tests", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-types", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-component-tree-introspection", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-token-resolution-introspection", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-theme-introspection", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-validation-introspection", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-metadata-introspection", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-system-health-snapshot", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-environment-gating", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "009-introspection-api", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "010-integration", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "011-exports", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "012-unit-tests", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
