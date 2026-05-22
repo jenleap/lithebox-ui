@@ -283,3 +283,23 @@
 {"timestamp":"2026-05-21T00:15:00Z","event":"task_completed","feature_id":"F016-runtime","task_id":"008-unit-tests","notes":"Added matchMedia mock to test-setup.ts; fixed afterEach cleanup order"}
 {"timestamp":"2026-05-21T00:16:00Z","event":"task_started","feature_id":"F016-runtime","task_id":"009-storybook-stories","notes":""}
 {"timestamp":"2026-05-21T00:17:00Z","event":"task_completed","feature_id":"F016-runtime","task_id":"009-storybook-stories","notes":""}
+{"timestamp":"2026-05-21T01:00:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"001-theme-mode-types","notes":""}
+{"timestamp":"2026-05-21T01:01:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"001-theme-mode-types","notes":""}
+{"timestamp":"2026-05-21T01:02:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"002-dark-mode-tokens","notes":""}
+{"timestamp":"2026-05-21T01:03:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"002-dark-mode-tokens","notes":""}
+{"timestamp":"2026-05-21T01:04:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"003-theme-resolution","notes":""}
+{"timestamp":"2026-05-21T01:05:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"003-theme-resolution","notes":""}
+{"timestamp":"2026-05-21T01:06:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"004-system-preference-detection","notes":""}
+{"timestamp":"2026-05-21T01:07:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"004-system-preference-detection","notes":""}
+{"timestamp":"2026-05-21T01:08:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"005-theme-persistence","notes":""}
+{"timestamp":"2026-05-21T01:09:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"005-theme-persistence","notes":""}
+{"timestamp":"2026-05-21T01:10:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"006-theme-mode-context","notes":""}
+{"timestamp":"2026-05-21T01:11:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"006-theme-mode-context","notes":""}
+{"timestamp":"2026-05-21T01:12:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"007-theme-provider-extension","notes":""}
+{"timestamp":"2026-05-21T01:13:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"007-theme-provider-extension","notes":""}
+{"timestamp":"2026-05-21T01:14:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"008-theme-exports","notes":""}
+{"timestamp":"2026-05-21T01:15:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"008-theme-exports","notes":""}
+{"timestamp":"2026-05-21T01:16:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"009-unit-tests","notes":""}
+{"timestamp":"2026-05-21T01:17:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"009-unit-tests","notes":"375 tests passing; localStorage mocked via vi.stubGlobal due to jsdom localstorage-file limitation"}
+{"timestamp":"2026-05-21T01:18:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"010-storybook-stories","notes":""}
+{"timestamp":"2026-05-21T01:19:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"010-storybook-stories","notes":"4 stories: LightMode, DarkMode, InteractiveToggle, SideBySide"}

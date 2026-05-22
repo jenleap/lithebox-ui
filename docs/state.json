@@ -1,17 +1,17 @@
 {
     "current_feature": "F017-theme-mode",
-    "current_task_id": "001-theme-mode-types",
-    "status": "in_progress",
+    "current_task_id": "010-storybook-stories",
+    "status": "completed",
     "tasks": [
-        { "id": "001-theme-mode-types", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-dark-mode-tokens", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-theme-resolution", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-system-preference-detection", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-theme-persistence", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-theme-mode-context", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-theme-provider-extension", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-theme-exports", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "009-unit-tests", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "010-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-theme-mode-types", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-dark-mode-tokens", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-theme-resolution", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-system-preference-detection", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-theme-persistence", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-theme-mode-context", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-theme-provider-extension", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-theme-exports", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "009-unit-tests", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "010-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
     ]
 }

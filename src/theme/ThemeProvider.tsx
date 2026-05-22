@@ -1,21 +1,40 @@
-import React, { createContext, useContext, useMemo } from "react"
+import React, { createContext, useContext, useMemo, useState, useCallback } from "react"
 import { defaultTokens } from "../tokens/defaultTokens"
-import { mergeTokens } from "../tokens/mergeTokens"
 import { tokensToCSSVariables } from "../tokens/tokensToCSSVariables"
+import { resolveThemeTokens } from "./resolveTheme"
+import { useSystemTheme } from "./useSystemTheme"
+import { useThemePersistence } from "./useThemePersistence"
+import { ThemeModeContext } from "./ThemeModeContext"
 import type { Tokens } from "../tokens/types"
+import type { ThemeMode } from "./types"
 
 const ThemeContext = createContext<Tokens>(defaultTokens)
 
-export function ThemeProvider({
-  tokens,
-  children
-}: {
+export type ThemeProviderProps = {
+  mode?: ThemeMode
   tokens?: Partial<Tokens>
   children: React.ReactNode
-}) {
+}
+
+export function ThemeProvider({ mode: modeProp, tokens, children }: ThemeProviderProps) {
+  const systemMode = useSystemTheme()
+  const [storedMode, persistMode] = useThemePersistence()
+
+  const initialMode: ThemeMode = modeProp ?? storedMode ?? systemMode
+  const [activeMode, setActiveMode] = useState<ThemeMode>(initialMode)
+
+  const setMode = useCallback((next: ThemeMode) => {
+    setActiveMode(next)
+    persistMode(next)
+  }, [persistMode])
+
+  const toggleMode = useCallback(() => {
+    setMode(activeMode === "light" ? "dark" : "light")
+  }, [activeMode, setMode])
+
   const resolvedTokens = useMemo(
-    () => mergeTokens(defaultTokens, tokens),
-    [tokens]
+    () => resolveThemeTokens(activeMode, tokens),
+    [activeMode, tokens]
   )
 
   const cssVariables = useMemo(
@@ -23,12 +42,19 @@ export function ThemeProvider({
     [resolvedTokens]
   )
 
+  const modeContextValue = useMemo(
+    () => ({ mode: activeMode, setMode, toggleMode }),
+    [activeMode, setMode, toggleMode]
+  )
+
   return (
-    <ThemeContext.Provider value={resolvedTokens}>
-      <div style={cssVariables as React.CSSProperties}>
-        {children}
-      </div>
-    </ThemeContext.Provider>
+    <ThemeModeContext.Provider value={modeContextValue}>
+      <ThemeContext.Provider value={resolvedTokens}>
+        <div data-theme={activeMode} style={cssVariables as React.CSSProperties}>
+          {children}
+        </div>
+      </ThemeContext.Provider>
+    </ThemeModeContext.Provider>
   )
 }
 
