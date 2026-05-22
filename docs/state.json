@@ -1,17 +1,17 @@
 {
     "current_feature": "F019-validation-constraint",
-    "current_task_id": "001-types",
-    "status": "in_progress",
+    "current_task_id": "010-unit-tests",
+    "status": "completed",
     "tasks": [
-        { "id": "001-types", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-prop-validator", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-composition-validator", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-slot-validator", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-accessibility-validator", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-responsive-validator", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-metadata-validator", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-validation-pipeline", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "009-exports", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "010-unit-tests", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-types", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-prop-validator", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-composition-validator", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-slot-validator", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-accessibility-validator", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-responsive-validator", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-metadata-validator", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-validation-pipeline", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "009-exports", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "010-unit-tests", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
