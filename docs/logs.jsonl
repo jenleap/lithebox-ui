@@ -303,3 +303,4 @@
 {"timestamp":"2026-05-21T01:17:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"009-unit-tests","notes":"375 tests passing; localStorage mocked via vi.stubGlobal due to jsdom localstorage-file limitation"}
 {"timestamp":"2026-05-21T01:18:00Z","event":"task_started","feature_id":"F017-theme-mode","task_id":"010-storybook-stories","notes":""}
 {"timestamp":"2026-05-21T01:19:00Z","event":"task_completed","feature_id":"F017-theme-mode","task_id":"010-storybook-stories","notes":"4 stories: LightMode, DarkMode, InteractiveToggle, SideBySide"}
+{"timestamp":"2026-05-21T00:00:00Z","event":"task_started","feature_id":"F018-date-time-picker","task_id":"001-types","notes":""}
