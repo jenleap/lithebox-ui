@@ -1,17 +1,17 @@
 {
     "current_feature": "F018-date-time-picker",
-    "current_task_id": "001-types",
-    "status": "in_progress",
+    "current_task_id": "010-storybook-stories",
+    "status": "completed",
     "tasks": [
-        { "id": "001-types", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-calendar-utils", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-date-picker-contract", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-time-picker-contract", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-popover-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-date-picker-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-time-picker-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-exports", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "009-unit-tests", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "010-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-types", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-calendar-utils", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-date-picker-contract", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-time-picker-contract", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-popover-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-date-picker-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-time-picker-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-exports", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "009-unit-tests", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "010-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
