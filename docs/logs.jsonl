@@ -366,3 +366,25 @@
 {"timestamp":"2026-05-21T00:20:00Z","event":"task_completed","feature_id":"F020-versioning","task_id":"010-exports","notes":""}
 {"timestamp":"2026-05-21T00:21:00Z","event":"task_started","feature_id":"F020-versioning","task_id":"011-unit-tests","notes":""}
 {"timestamp":"2026-05-21T00:22:00Z","event":"task_completed","feature_id":"F020-versioning","task_id":"011-unit-tests","notes":"55 tests passing across 8 test files"}
+{"timestamp":"2026-05-21T00:00:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"001-types","notes":""}
+{"timestamp":"2026-05-21T00:01:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"001-types","notes":""}
+{"timestamp":"2026-05-21T00:02:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"002-rules-engine","notes":""}
+{"timestamp":"2026-05-21T00:03:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"002-rules-engine","notes":""}
+{"timestamp":"2026-05-21T00:04:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"003-integrity-model","notes":""}
+{"timestamp":"2026-05-21T00:05:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"003-integrity-model","notes":""}
+{"timestamp":"2026-05-21T00:06:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"004-drift-detection","notes":""}
+{"timestamp":"2026-05-21T00:07:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"004-drift-detection","notes":""}
+{"timestamp":"2026-05-21T00:08:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"005-alignment-rules","notes":""}
+{"timestamp":"2026-05-21T00:09:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"005-alignment-rules","notes":""}
+{"timestamp":"2026-05-21T00:10:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"006-policy-system","notes":""}
+{"timestamp":"2026-05-21T00:11:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"006-policy-system","notes":""}
+{"timestamp":"2026-05-21T00:12:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"007-change-classification","notes":""}
+{"timestamp":"2026-05-21T00:13:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"007-change-classification","notes":""}
+{"timestamp":"2026-05-21T00:14:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"008-validation-pipeline","notes":""}
+{"timestamp":"2026-05-21T00:15:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"008-validation-pipeline","notes":""}
+{"timestamp":"2026-05-21T00:16:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"009-integration","notes":""}
+{"timestamp":"2026-05-21T00:17:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"009-integration","notes":""}
+{"timestamp":"2026-05-21T00:18:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"010-exports","notes":""}
+{"timestamp":"2026-05-21T00:19:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"010-exports","notes":""}
+{"timestamp":"2026-05-21T00:20:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"011-unit-tests","notes":""}
+{"timestamp":"2026-05-21T00:21:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"011-unit-tests","notes":""}
