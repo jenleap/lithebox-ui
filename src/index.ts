@@ -176,3 +176,19 @@ export * from "./responsive"
 
 // Metadata System (F015)
 export * from "./metadata"
+
+// Runtime Integration Layer (F016)
+export {
+  LitheboxProvider,
+  RuntimeContext,
+  useRuntime,
+  detectEnvironment,
+  injectTokens,
+  useIsomorphicLayoutEffect,
+} from "./runtime"
+export type {
+  LitheboxProviderProps,
+  LitheboxRuntimeConfig,
+  RuntimeEnvironment,
+  RuntimeContextValue,
+} from "./runtime"

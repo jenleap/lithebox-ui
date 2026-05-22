@@ -11,16 +11,17 @@ const OverlayContext = createContext<OverlayContextValue | null>(null)
 
 type OverlayManagerProviderProps = {
   children?: React.ReactNode
+  portalRootId?: string
 }
 
-export function OverlayManagerProvider({ children }: OverlayManagerProviderProps) {
+export function OverlayManagerProvider({ children, portalRootId = "overlay-root" }: OverlayManagerProviderProps) {
   const portalRootRef = useRef<HTMLDivElement | null>(null)
   const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null)
   const [, setOverlays] = useState<OverlayEntry[]>([])
 
   useEffect(() => {
     const div = document.createElement("div")
-    div.id = "overlay-root"
+    div.id = portalRootId
     document.body.appendChild(div)
     portalRootRef.current = div
     setPortalRoot(div)
@@ -29,7 +30,7 @@ export function OverlayManagerProvider({ children }: OverlayManagerProviderProps
       portalRootRef.current = null
       setPortalRoot(null)
     }
-  }, [])
+  }, [portalRootId])
 
   const registerOverlay = (entry: OverlayEntry) => {
     setOverlays(prev => [...prev.filter(e => e.id !== entry.id), entry])

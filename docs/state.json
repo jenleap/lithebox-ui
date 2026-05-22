@@ -1,16 +1,16 @@
 {
     "current_feature": "F016-runtime",
-    "current_task_id": "001-runtime-types",
-    "status": "in_progress",
+    "current_task_id": "009-storybook-stories",
+    "status": "completed",
     "tasks": [
-        { "id": "001-runtime-types", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-environment-detection", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-runtime-context", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-token-hydration", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-portal-management", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-lithebox-provider", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-runtime-index", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-unit-tests", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "009-storybook-stories", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-runtime-types", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-environment-detection", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-runtime-context", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-token-hydration", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-portal-management", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-lithebox-provider", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "007-runtime-index", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "008-unit-tests", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "009-storybook-stories", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
