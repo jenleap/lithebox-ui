@@ -1,18 +1,19 @@
 {
-    "current_feature": "F021-design-governance",
-    "current_task_id": "011-unit-tests",
-    "status": "completed",
+    "current_feature": "F022-diagnostics",
+    "current_task_id": "001-types",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-types", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-rules-engine", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-integrity-model", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-drift-detection", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-alignment-rules", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-policy-system", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-change-classification", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-validation-pipeline", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "009-integration", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "010-exports", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "011-unit-tests", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-types", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-component-tree-introspection", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-token-resolution-introspection", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-theme-introspection", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-validation-introspection", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-metadata-introspection", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "007-system-health-snapshot", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "008-environment-gating", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "009-introspection-api", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "010-integration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "011-exports", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "012-unit-tests", "status": "pending", "attempts": 0, "errors": null }
     ]
 }

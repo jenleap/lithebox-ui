@@ -388,3 +388,4 @@
 {"timestamp":"2026-05-21T00:19:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"010-exports","notes":""}
 {"timestamp":"2026-05-21T00:20:00Z","event":"task_started","feature_id":"F021-design-governance","task_id":"011-unit-tests","notes":""}
 {"timestamp":"2026-05-21T00:21:00Z","event":"task_completed","feature_id":"F021-design-governance","task_id":"011-unit-tests","notes":""}
+{"timestamp":"2026-05-21T00:00:00Z","event":"task_started","feature_id":"F022-diagnostics","task_id":"001-types","notes":""}
