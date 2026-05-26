@@ -1,7 +1,10 @@
+// ─── Token System (F001) ────────────────────────────────────────────────────
 export type { Tokens } from "./tokens/types"
 export { defaultTokens } from "./tokens/defaultTokens"
 export { mergeTokens } from "./tokens/mergeTokens"
 export { tokensToCSSVariables } from "./tokens/tokensToCSSVariables"
+
+// ─── Theme System (F001, F017) ───────────────────────────────────────────────
 export { ThemeProvider, useTheme } from "./theme/ThemeProvider"
 export type { ThemeProviderProps } from "./theme/ThemeProvider"
 export { ThemeModeContext, useThemeMode } from "./theme/ThemeModeContext"
@@ -11,6 +14,7 @@ export { useThemePersistence } from "./theme/useThemePersistence"
 export { lightTokens, darkTokens } from "./theme"
 export type { ThemeMode, ThemeModeContextValue, ThemeWithMode } from "./theme"
 
+// ─── Layout Primitives (F002) ────────────────────────────────────────────────
 export { Box } from "./primitives/Box"
 export type { BoxProps } from "./primitives/Box"
 
@@ -23,6 +27,7 @@ export type { RowProps } from "./primitives/Row"
 export { Container } from "./primitives/Container"
 export type { ContainerProps } from "./primitives/Container"
 
+// ─── Core Components (F003) ──────────────────────────────────────────────────
 export { Text } from "./components/Text"
 export type { TextProps } from "./components/Text"
 
@@ -47,6 +52,7 @@ export type { ButtonProps } from "./components/Button"
 export { Icon } from "./components/Icon"
 export type { IconProps } from "./components/Icon"
 
+// ─── Form System (F007) ──────────────────────────────────────────────────────
 export { Input } from "./components/Input"
 export type { InputProps } from "./components/Input"
 
@@ -71,6 +77,7 @@ export type { ErrorTextProps } from "./components/ErrorText"
 export { Field } from "./components/Field"
 export type { FieldProps } from "./components/Field"
 
+// ─── Navigation System (F008) ────────────────────────────────────────────────
 export { AppShell } from "./components/AppShell"
 export type { AppShellProps, SidebarMode } from "./components/AppShell"
 export { Sidebar, useSidebarMode } from "./components/Sidebar"
@@ -91,6 +98,7 @@ export type { DropdownProps } from "./components/Dropdown"
 
 export { OverlayManagerProvider } from "./layers/OverlayManager"
 
+// ─── Data Display (F009) ─────────────────────────────────────────────────────
 export { List, ListItem } from "./components/List"
 export type { ListProps, ListItemProps } from "./components/List"
 export { DescriptionList, DescriptionListItem } from "./components/DescriptionList"
@@ -111,6 +119,7 @@ export type { BadgeProps, BadgeVariant } from "./components/Badge"
 export { StatusIndicator } from "./components/StatusIndicator"
 export type { StatusIndicatorProps, StatusIndicatorVariant } from "./components/StatusIndicator"
 
+// ─── Page Composition (F010) ─────────────────────────────────────────────────
 export { Page } from "./components/Page"
 export type { PageProps, PageState, PageLayout } from "./components/Page"
 
@@ -129,6 +138,7 @@ export type { PageFooterProps } from "./components/PageFooter"
 export { Section, SectionHeader, SectionContent } from "./components/Section"
 export type { SectionProps, SectionHeaderProps, SectionContentProps } from "./components/Section"
 
+// ─── Feedback System (F011) ──────────────────────────────────────────────────
 export { Toast } from "./components/Toast"
 export { ToastContainer } from "./components/ToastContainer"
 export { Banner } from "./components/Banner"
@@ -145,6 +155,7 @@ export type {
   BannerLifecycleState,
 } from "./feedback/types"
 
+// ─── Motion & Animation (F013) ───────────────────────────────────────────────
 export { duration, easing, motionScale, motionTokens } from "./motion"
 export type {
   DurationTokens,
@@ -179,10 +190,34 @@ export { useReducedMotion, useMotionTransition, usePageTransition } from "./moti
 export { PageTransition } from "./motion"
 export type { PageTransitionProps } from "./motion"
 
+// ─── Responsive System (F014) ────────────────────────────────────────────────
 export * from "./responsive"
 
 // Metadata System (F015)
-export * from "./metadata"
+// Note: PropSchema is aliased to MetadataPropSchema to avoid collision with validation's PropSchema
+export type {
+  ComponentCategory,
+  PropType,
+  PropSchema as MetadataPropSchema,
+  SlotSchema,
+  VariantSchema,
+  CompositionRules,
+  ResponsiveMetadata,
+  AccessibilityMetadata,
+  UsageGuidelines,
+  ComponentMetadata,
+  UIPattern,
+} from "./metadata"
+export {
+  registerComponent,
+  getComponent,
+  getAllComponents,
+  exportRegistryAsJSON,
+  registerPattern,
+  getPattern,
+  getAllPatterns,
+  exportPatternsAsJSON,
+} from "./metadata"
 
 // Runtime Integration Layer (F016)
 export {
@@ -200,7 +235,7 @@ export type {
   RuntimeContextValue,
 } from "./runtime"
 
-// Date & Time Picker (F018)
+// ─── Date & Time Picker (F018) ───────────────────────────────────────────────
 export { DatePicker } from "./components/DatePicker"
 export type { DatePickerProps } from "./components/DatePicker"
 
@@ -221,4 +256,5 @@ export type {
 export { DatePickerContract } from "./contracts/DatePickerContract"
 export { TimePickerContract } from "./contracts/TimePickerContract"
 
+// ─── Validation & Constraint Engine (F019) ───────────────────────────────────
 export * from "./validation"

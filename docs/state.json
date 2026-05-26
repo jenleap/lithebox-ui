@@ -1,13 +1,13 @@
 {
     "current_feature": "F023-package-build",
-    "current_task_id": "001-tsup-install-config",
-    "status": "in_progress",
+    "current_task_id": "006-dry-run-publish",
+    "status": "completed",
     "tasks": [
-        { "id": "001-tsup-install-config", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-package-manifest", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-tsconfig-build", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-public-api-audit", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-build-validation", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-dry-run-publish", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-tsup-install-config", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-package-manifest", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-tsconfig-build", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-public-api-audit", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-build-validation", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "006-dry-run-publish", "status": "completed", "attempts": 1, "errors": null }
     ]
 }

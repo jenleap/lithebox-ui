@@ -7,7 +7,7 @@
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "dist",
     "outDir": "dist",
     "skipLibCheck": true
   },

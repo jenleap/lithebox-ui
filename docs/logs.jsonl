@@ -413,3 +413,15 @@
 {"timestamp":"2026-05-21T00:22:00Z","event":"task_started","feature_id":"F022-diagnostics","task_id":"012-unit-tests","notes":""}
 {"timestamp":"2026-05-21T00:23:00Z","event":"task_completed","feature_id":"F022-diagnostics","task_id":"012-unit-tests","notes":""}
 {"timestamp":"2026-05-26T00:00:00Z","event":"task_started","feature_id":"F023-package-build","task_id":"001-tsup-install-config","notes":""}
+{"timestamp":"2026-05-26T00:00:01Z","event":"task_started","feature_id":"F023-package-build","task_id":"001-tsup-install-config","notes":""}
+{"timestamp":"2026-05-26T00:00:02Z","event":"task_completed","feature_id":"F023-package-build","task_id":"001-tsup-install-config","notes":"Fixed duplicate PropSchema export (metadata vs validation) and added @types/node for process.env"}
+{"timestamp":"2026-05-26T00:00:03Z","event":"task_started","feature_id":"F023-package-build","task_id":"002-package-manifest","notes":""}
+{"timestamp":"2026-05-26T00:00:04Z","event":"task_completed","feature_id":"F023-package-build","task_id":"002-package-manifest","notes":"Fixed exports map order (types first), sideEffects array for metadata files"}
+{"timestamp":"2026-05-26T00:00:05Z","event":"task_started","feature_id":"F023-package-build","task_id":"003-tsconfig-build","notes":""}
+{"timestamp":"2026-05-26T00:00:06Z","event":"task_completed","feature_id":"F023-package-build","task_id":"003-tsconfig-build","notes":"638 tests pass, build clean, tsconfig.build.json excludes test files"}
+{"timestamp":"2026-05-26T00:00:07Z","event":"task_started","feature_id":"F023-package-build","task_id":"004-public-api-audit","notes":""}
+{"timestamp":"2026-05-26T00:00:08Z","event":"task_completed","feature_id":"F023-package-build","task_id":"004-public-api-audit","notes":"No diagnostics/introspection in public API, added section comments to src/index.ts"}
+{"timestamp":"2026-05-26T00:00:09Z","event":"task_started","feature_id":"F023-package-build","task_id":"005-build-validation","notes":""}
+{"timestamp":"2026-05-26T00:00:10Z","event":"task_completed","feature_id":"F023-package-build","task_id":"005-build-validation","notes":"ESM 182KB, CJS 194KB, DTS 40KB. React externalized. 638 tests pass."}
+{"timestamp":"2026-05-26T00:00:11Z","event":"task_started","feature_id":"F023-package-build","task_id":"006-dry-run-publish","notes":""}
+{"timestamp":"2026-05-26T00:00:12Z","event":"task_completed","feature_id":"F023-package-build","task_id":"006-dry-run-publish","notes":"Dry run passed. 8 files: dist/* + package.json + README.md. Package 226.6KB. No src/ leakage."}
