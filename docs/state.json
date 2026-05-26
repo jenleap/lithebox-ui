@@ -1,19 +1,13 @@
 {
-    "current_feature": "F022-diagnostics",
-    "current_task_id": "012-unit-tests",
-    "status": "completed",
+    "current_feature": "F023-package-build",
+    "current_task_id": "001-tsup-install-config",
+    "status": "in_progress",
     "tasks": [
-        { "id": "001-types", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-component-tree-introspection", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-token-resolution-introspection", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-theme-introspection", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-validation-introspection", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "006-metadata-introspection", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "007-system-health-snapshot", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "008-environment-gating", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "009-introspection-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "010-integration", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "011-exports", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "012-unit-tests", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-tsup-install-config", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-package-manifest", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-tsconfig-build", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-public-api-audit", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-build-validation", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "006-dry-run-publish", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
