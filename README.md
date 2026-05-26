@@ -11,6 +11,7 @@ All visual decisions originate from a single token structure. Components consume
 
 - [Architecture](#architecture)
 - [Getting Started](#getting-started)
+- [Local Testing](#local-testing)
 - [Tokens](#tokens)
 - [Layout Primitives](#layout-primitives)
 - [Components](#components)
@@ -80,6 +81,34 @@ export default function App() {
 ```
 
 `ThemeProvider` with no props uses the built-in `defaultTokens`.
+
+---
+
+## Local Testing
+
+To test the package in another repository before publishing to npm, use `npm pack` to produce a local tarball.
+
+**1. Build and pack** (in this repo):
+
+```bash
+npm run build
+npm pack
+# produces: lithebox-ui-0.1.0.tgz
+```
+
+**2. Install the tarball** (in the consumer repo):
+
+```bash
+npm install /absolute/path/to/lithebox-ui/lithebox-ui-0.1.0.tgz
+```
+
+**3. Use it exactly as you would the published package:**
+
+```tsx
+import { ThemeProvider, Button } from "lithebox-ui"
+```
+
+After any change to the library, re-run `npm run build && npm pack` in this repo and re-install in the consumer.
 
 ---
 
