@@ -8,6 +8,8 @@ import {
   Modal,
   Drawer,
   Dropdown,
+  Tooltip,
+  ContextMenu,
   Field,
   Input,
   Divider,
@@ -252,17 +254,64 @@ export default function OverlaysPage() {
       <DrawerDemo />
       <DropdownDemo />
       <StackingDemo />
-
-      <Card padding="md">
-        <Stack gap="sm">
-          <Heading level={3}>Not Yet Implemented</Heading>
-          <Text color="secondary" size="sm">
-            The following overlay types are not yet in the public API and are tracked for future features:
-          </Text>
-          <Text color="secondary" size="sm">• Tooltip — contextual hover/focus overlays</Text>
-          <Text color="secondary" size="sm">• ContextMenu — right-click triggered menus</Text>
-        </Stack>
-      </Card>
+      <TooltipDemo />
+      <ContextMenuDemo />
     </Stack>
+  )
+}
+
+function TooltipDemo() {
+  return (
+    <DemoCard
+      title="Tooltip"
+      description="Validates hover/focus triggered positioning, placement variants, and aria-describedby wiring."
+    >
+      <Tooltip content="Top tooltip" placement="top">
+        <Button>Top</Button>
+      </Tooltip>
+      <Tooltip content="Right tooltip" placement="right">
+        <Button variant="secondary">Right</Button>
+      </Tooltip>
+      <Tooltip content="Bottom tooltip" placement="bottom">
+        <Button variant="secondary">Bottom</Button>
+      </Tooltip>
+      <Tooltip content="Left tooltip" placement="left">
+        <Button variant="secondary">Left</Button>
+      </Tooltip>
+    </DemoCard>
+  )
+}
+
+function ContextMenuDemo() {
+  const toast = useToast()
+
+  const items = [
+    { label: 'Open', onClick: () => toast.info('Open clicked') },
+    { label: 'Copy Link', onClick: () => toast.info('Copy Link clicked') },
+    { label: 'Rename', onClick: () => toast.info('Rename clicked'), disabled: true },
+    { label: 'Delete', onClick: () => toast.error('Delete clicked'), destructive: true },
+  ]
+
+  return (
+    <DemoCard
+      title="Context Menu"
+      description="Validates right-click triggered menus at cursor position, keyboard navigation, disabled and destructive items."
+    >
+      <ContextMenu items={items}>
+        <div
+          style={{
+            width: '100%',
+            padding: 'var(--spacing-lg)',
+            border: '2px dashed var(--color-border)',
+            borderRadius: 'var(--radius-md)',
+            textAlign: 'center',
+            cursor: 'context-menu',
+            userSelect: 'none',
+          }}
+        >
+          <Text color="secondary">Right-click anywhere in this area</Text>
+        </div>
+      </ContextMenu>
+    </DemoCard>
   )
 }

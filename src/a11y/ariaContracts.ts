@@ -94,3 +94,15 @@ export const PageA11yContract: AriaContract = {
   role: "main",
   attributes: {},
 } as const
+
+export const TooltipA11yContract: AriaContract = {
+  role: "tooltip",
+  attributes: {},
+} as const
+
+export const ContextMenuA11yContract: AriaContract = {
+  role: "menu",
+  attributes: {
+    "aria-orientation": "vertical",
+  },
+} as const

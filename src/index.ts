@@ -96,6 +96,12 @@ export type { DrawerProps } from "./components/Drawer"
 export { Dropdown } from "./components/Dropdown"
 export type { DropdownProps } from "./components/Dropdown"
 
+export { Tooltip } from "./components/Tooltip"
+export type { TooltipProps, TooltipPlacement } from "./components/Tooltip"
+
+export { ContextMenu } from "./components/ContextMenu"
+export type { ContextMenuProps, ContextMenuItem } from "./components/ContextMenu"
+
 export { OverlayManagerProvider } from "./layers/OverlayManager"
 
 // ─── Data Display (F009) ─────────────────────────────────────────────────────

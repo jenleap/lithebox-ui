@@ -20,6 +20,7 @@ export type AriaRole =
   | "region"
   | "alert"
   | "status"
+  | "tooltip"
 
 export type AriaAttributeMap = Record<string, string | boolean>
 

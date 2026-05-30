@@ -1,12 +1,12 @@
 {
     "current_feature": "P001-tooltip-contextmenu",
-    "current_task_id": "001-tooltip-component",
-    "status": "in_progress",
+    "current_task_id": "005-unit-tests",
+    "status": "completed",
     "tasks": [
-        { "id": "001-tooltip-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-contextmenu-component", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-public-api", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-playground-integration", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-unit-tests", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-tooltip-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-contextmenu-component", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-public-api", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-playground-integration", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-unit-tests", "status": "completed", "attempts": 1, "errors": null }
     ]
 }

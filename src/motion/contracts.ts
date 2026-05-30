@@ -54,3 +54,8 @@ export const PageMotionContract: MotionContract = {
   enter: FadeInPrimitive,
   exit: FadeOutPrimitive,
 }
+
+export const TooltipMotionContract: MotionContract = {
+  enter: FadeInPrimitive,
+  exit: FadeOutPrimitive,
+}
