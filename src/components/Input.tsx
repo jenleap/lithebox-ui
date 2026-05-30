@@ -4,9 +4,12 @@ import { resolveSlot } from "../contracts/resolveContract"
 import { useInteractionState } from "../interactions"
 import { resolveA11yState } from "../a11y/resolveA11yState"
 
+export type InputType = "text" | "password" | "email" | "search" | "tel" | "url"
+
 export type InputProps = {
   value: string
   onChange: (value: string) => void
+  type?: InputType
   placeholder?: string
   disabled?: boolean
   error?: boolean
@@ -17,6 +20,7 @@ export type InputProps = {
 export function Input({
   value,
   onChange,
+  type = "text",
   placeholder,
   disabled = false,
   error = false,
@@ -57,7 +61,7 @@ export function Input({
 
   return (
     <input
-      type="text"
+      type={type}
       id={id}
       value={value}
       onChange={e => onChange(e.target.value)}

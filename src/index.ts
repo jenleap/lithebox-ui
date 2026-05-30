@@ -54,7 +54,7 @@ export type { IconProps } from "./components/Icon"
 
 // ─── Form System (F007) ──────────────────────────────────────────────────────
 export { Input } from "./components/Input"
-export type { InputProps } from "./components/Input"
+export type { InputProps, InputType } from "./components/Input"
 
 export { Textarea } from "./components/Textarea"
 export type { TextareaProps } from "./components/Textarea"

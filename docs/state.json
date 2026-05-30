@@ -1,17 +1,12 @@
 {
-    "current_feature": "F024-playground",
-    "current_task_id": "001-monorepo-workspace-setup",
+    "current_feature": "P001-tooltip-contextmenu",
+    "current_task_id": "001-tooltip-component",
     "status": "in_progress",
     "tasks": [
-        { "id": "001-monorepo-workspace-setup", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "002-playground-app-scaffold", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "003-provider-and-routing-setup", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "004-application-shell", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "005-auth-screens", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "006-dashboard-screen", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "007-settings-screen", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "008-data-management-screen", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "009-overlay-validation-screen", "status": "pending", "attempts": 0, "errors": null },
-        { "id": "010-package-boundary-validation", "status": "pending", "attempts": 0, "errors": null }
+        { "id": "001-tooltip-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "002-contextmenu-component", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "003-public-api", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "004-playground-integration", "status": "pending", "attempts": 0, "errors": null },
+        { "id": "005-unit-tests", "status": "pending", "attempts": 0, "errors": null }
     ]
 }
