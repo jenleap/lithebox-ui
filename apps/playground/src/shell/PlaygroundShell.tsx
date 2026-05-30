@@ -8,6 +8,7 @@ import {
 } from 'lithebox-ui'
 import { useBreakpoint } from 'lithebox-ui'
 import { NavItems } from './NavItems'
+import { useTokenEditor } from '../token-editor/TokenEditorContext'
 
 type PlaygroundShellProps = {
   children: React.ReactNode
@@ -38,6 +39,7 @@ function DesktopSidebar() {
 export function PlaygroundShell({ children }: PlaygroundShellProps) {
   const { isMobile } = useBreakpoint()
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  const { isOpen, setIsOpen } = useTokenEditor()
 
   return (
     <AppShell
@@ -63,6 +65,28 @@ export function PlaygroundShell({ children }: PlaygroundShellProps) {
             </button>
           )}
           <Text weight="bold" color="primary">Lithebox Playground</Text>
+          <div style={{ flex: 1 }} />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-pressed={isOpen}
+            aria-label="Toggle token editor"
+            style={{
+              background: isOpen ? 'var(--color-primary)' : 'var(--color-surface)',
+              color: isOpen ? 'var(--color-background)' : 'var(--color-text)',
+              border: '1px solid var(--color-border)',
+              borderRadius: 'var(--radius-sm)',
+              padding: 'var(--spacing-xs) var(--spacing-sm)',
+              cursor: 'pointer',
+              fontFamily: 'var(--font-family-base)',
+              fontSize: 'var(--font-size-sm)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'var(--spacing-xs)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            ◧ Tokens
+          </button>
         </TopBar>
       }
     >

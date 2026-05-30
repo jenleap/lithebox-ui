@@ -455,3 +455,10 @@
 {"timestamp":"2026-05-29T01:07:00Z","event":"task_completed","feature_id":"P001-tooltip-contextmenu","task_id":"004-playground-integration","notes":""}
 {"timestamp":"2026-05-29T01:08:00Z","event":"task_started","feature_id":"P001-tooltip-contextmenu","task_id":"005-unit-tests","notes":""}
 {"timestamp":"2026-05-29T20:27:00Z","event":"task_completed","feature_id":"P001-tooltip-contextmenu","task_id":"005-unit-tests","notes":""}
+{"timestamp":"2026-05-29T20:30:00Z","event":"task_started","feature_id":"F025-token-editor","task_id":"001-token-editor-context","notes":""}
+{"timestamp":"2026-05-29T20:30:10Z","event":"task_completed","feature_id":"F025-token-editor","task_id":"001-token-editor-context","notes":""}
+{"timestamp":"2026-05-29T20:30:11Z","event":"task_started","feature_id":"F025-token-editor","task_id":"002-token-editor-panel-shell","notes":""}
+{"timestamp":"2026-05-29T20:41:00Z","event":"task_completed","feature_id":"F025-token-editor","task_id":"002-token-editor-panel-shell","notes":""}
+{"timestamp":"2026-05-29T20:41:01Z","event":"task_completed","feature_id":"F025-token-editor","task_id":"003-json-editor-tab","notes":""}
+{"timestamp":"2026-05-29T20:41:02Z","event":"task_completed","feature_id":"F025-token-editor","task_id":"004-visual-editor-tab","notes":""}
+{"timestamp":"2026-05-29T20:41:03Z","event":"task_completed","feature_id":"F025-token-editor","task_id":"005-shell-integration","notes":""}

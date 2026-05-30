@@ -12,6 +12,7 @@ All visual decisions originate from a single token structure. Components consume
 - [Architecture](#architecture)
 - [Getting Started](#getting-started)
 - [Local Testing](#local-testing)
+- [Playground](#playground)
 - [Tokens](#tokens)
 - [Layout Primitives](#layout-primitives)
 - [Components](#components)
@@ -109,6 +110,71 @@ import { ThemeProvider, Button } from "lithebox-ui"
 ```
 
 After any change to the library, re-run `npm run build && npm pack` in this repo and re-install in the consumer.
+
+---
+
+## Playground
+
+The monorepo includes a Vite + React playground app for running components under real application conditions and experimenting with token values live.
+
+### Start the playground
+
+From the repo root (requires [pnpm](https://pnpm.io)):
+
+```bash
+pnpm install
+pnpm --filter @lithebox/playground dev
+```
+
+The playground opens at `http://localhost:5173`. It uses the library via the pnpm workspace link — no build step required for local development.
+
+### Pages
+
+| Route | What it validates |
+|---|---|
+| `/dashboard` | Table, Badge, KPI layout, two-column grid |
+| `/data` | Search, filter, pagination, loading state, add/edit Drawer, EmptyState |
+| `/settings` | Form validation, Checkbox, Modal confirmation, light/dark toggle |
+| `/overlays` | Modal (nested), Drawer (left/right), Dropdown, Tooltip, ContextMenu, z-index stacking |
+
+Auth routes (`/auth/login`, `/auth/signup`, `/auth/reset`) validate form composition and navigation.
+
+### Token editor
+
+Click **◧ Tokens** in the top bar to open the live token editor panel.
+
+**JSON tab — load a full token set**
+
+Paste any `Partial<Tokens>` object into the textarea and click **Apply**:
+
+```json
+{
+  "color": {
+    "primary": "#0EA5E9",
+    "secondary": "#F59E0B"
+  },
+  "radius": {
+    "sm": "0px",
+    "md": "2px",
+    "lg": "4px"
+  },
+  "typography": {
+    "fontFamily": "Georgia, serif"
+  }
+}
+```
+
+All components update immediately. Invalid JSON shows an inline error without losing your draft.
+
+**Visual tab — edit individual values**
+
+Switch to the Visual tab to tweak individual values. Color tokens show a color swatch picker alongside a hex text input. Dimension and typography values are plain text inputs that apply on blur. Every change reflects across all components in real time.
+
+Switching between tabs is bidirectional — edits made in the Visual tab appear in the JSON tab and vice versa.
+
+**Reset**
+
+Click **Reset** in the panel header to clear all overrides and return to `defaultTokens`.
 
 ---
 

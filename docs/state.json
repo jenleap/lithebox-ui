@@ -1,12 +1,12 @@
 {
-    "current_feature": "P001-tooltip-contextmenu",
-    "current_task_id": "005-unit-tests",
+    "current_feature": "F025-token-editor",
+    "current_task_id": "005-shell-integration",
     "status": "completed",
     "tasks": [
-        { "id": "001-tooltip-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "002-contextmenu-component", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "003-public-api", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "004-playground-integration", "status": "completed", "attempts": 1, "errors": null },
-        { "id": "005-unit-tests", "status": "completed", "attempts": 1, "errors": null }
+        { "id": "001-token-editor-context", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "002-token-editor-panel-shell", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "003-json-editor-tab", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "004-visual-editor-tab", "status": "completed", "attempts": 1, "errors": null },
+        { "id": "005-shell-integration", "status": "completed", "attempts": 1, "errors": null }
     ]
 }
